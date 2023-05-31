@@ -35,6 +35,7 @@ const MovieSchema = new Schema({
 
 const Movie = mongoose.model("Movie", MovieSchema);
 
+
 /* const UserSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -85,15 +86,15 @@ app.get('/movies', async (req, res) => {
     } else {
       res.status(404).json({
         success: false,
-        message: 'No movies found',
+        message: 'Failed to fetch movies',
         body: {},
       });
     }
   } catch (err) {
     res.status(500).json({
       success: false,
-      message: err,
-      body: {},
+      message: 'Failed to fetch movies',
+      error: err.message,
     });
   }
 });
