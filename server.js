@@ -49,7 +49,7 @@ if (process.env.RESET_DB) {
 };
 
 
-const UserSchema = new mongoose.Schema({
+/* const UserSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
@@ -68,7 +68,7 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.model("User", UserSchema); */
 
 // Start defining your routes here
 app.get("/", (req, res) => {
@@ -131,6 +131,34 @@ app.post("/movies", async (req, res) => {
     });
   }
 });
+
+//ENDPOINTS accessed WITHOUT accessToken:
+
+//User model:
+//("/register")
+//("/login")
+
+//Movies model:
+//app.get("/movies" - version for landing page with fewer movies - and a few query values/filters, such as genre
+
+//ENDPOINTS accessed WITH accessToken:
+
+//Movies model:
+//app.get("/movies" - version with more movies by default  - and a lot of query values/filters
+//app.post("/movies" - User can post movies with accessToken
+//app.get("/movies/:id" - get one specific movies
+//app.get("/movies/:id/save" - User can save a movie
+//app.post("/movies/:createcollection" - User can create collection
+//app.get("/movies/collections" - get user's collections
+//app.get("/movies/collections/movies" - get movies in collection
+
+//Comments model:
+//app.post("/comments" - User can post comment on movies
+//app.get("/comments" - Get user comments
+
+//Review model:
+//app.post("/reviews" - User can review movies
+
 
 
 // Start the server
