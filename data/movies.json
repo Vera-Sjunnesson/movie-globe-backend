@@ -1,0 +1,73 @@
+[
+    {
+      "id": 1,
+      "title": "Inception",
+      "key_scene": "Spinning top scene",
+      "location_image": "https://s3.amazonaws.com/criterion-production/editorial_content_posts/hero/55-/OR5FnhktUpxZIqkG1IwUaX0nn3Srfz_original.jpg",
+      "coordinates": [-118.363, 34.052]
+    },
+    {
+      "id": 2,
+      "title": "The Shawshank Redemption",
+      "key_scene": "Andy escaping through the tunnel",
+      "location_image": "https://assets-jpcust.jwpsrv.com/thumbnails/2gcc6bb4-720.jpg",
+      "coordinates": [-83.561, 41.676]
+    },
+    {
+      "id": 3,
+      "title": "Pulp Fiction",
+      "key_scene": "Dance scene at Jack Rabbit Slim's",
+      "location_image": "https://assets-jpcust.jwpsrv.com/thumbnails/2gcc6bb4-720.jpg",
+      "coordinates": [-118.350, 34.087]
+    },
+    {
+      "id": 4,
+      "title": "The Dark Knight",
+      "key_scene": "Joker's interrogation scene",
+      "location_image": "https://assets-jpcust.jwpsrv.com/thumbnails/2gcc6bb4-720.jpg",
+      "coordinates": [-74.006, 40.712]
+    },
+    {
+      "id": 5,
+      "title": "Fight Club",
+      "key_scene": "The twist ending",
+      "location_image": "https://assets-jpcust.jwpsrv.com/thumbnails/2gcc6bb4-720.jpg",
+      "coordinates": [-122.419, 37.774]
+    },
+    {
+      "id": 6,
+      "title": "The Godfather",
+      "key_scene": "The horse head scene",
+      "location_image": "https://assets-jpcust.jwpsrv.com/thumbnails/2gcc6bb4-720.jpg",
+      "coordinates": [-73.983, 40.730]
+    },
+    {
+      "id": 7,
+      "title": "Forrest Gump",
+      "key_scene": "Running across the country",
+      "location_image": "https://assets-jpcust.jwpsrv.com/thumbnails/2gcc6bb4-720.jpg",
+      "coordinates": [-86.158, 39.768]
+    },
+    {
+      "id": 8,
+      "title": "Interstellar",
+      "key_scene": "Entering the wormhole",
+      "location_image": "https://assets-jpcust.jwpsrv.com/thumbnails/2gcc6bb4-720.jpg",
+      "coordinates": [-118.444, 34.019]
+    },
+    {
+      "id": 9,
+      "title": "The Matrix",
+      "key_scene": "Dodging bullets in the lobby",
+      "location_image": "https://assets-jpcust.jwpsrv.com/thumbnails/2gcc6bb4-720.jpg",
+      "coordinates": [-118.249, 34.048]
+    },
+    {
+      "id": 10,
+      "title": "Goodfellas",
+      "key_scene": "The 'funny how?' scene",
+      "location_image": "https://i.postimg.cc/Ss37cJft/Screenshot-2023-05-31-at-10-07-10.png",
+      "coordinates": [-73.945, 40.817]
+    }
+  ]
+  
