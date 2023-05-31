@@ -3,8 +3,9 @@ import cors from "cors";
 import mongoose from 'mongoose';
 import crypto from 'crypto';
 import bcrypt from 'bcrypt';
-
-import movieJson from './data/movies.json'
+import movieJson from './data/movies.json';
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 const mongoUrl = process.env.MONGO_URL || 'mongodb://127.0.0.1/movie-globe'
@@ -35,6 +36,17 @@ const MovieSchema = new Schema({
 
 const Movie = mongoose.model("Movie", MovieSchema);
 
+// Resetting the db  // Needs to be run with RESET_DB=true
+if (process.env.RESET_DB) {
+  const resetDatabase = () => {
+    /* await Movie.deleteMany(); */
+    movieJson.forEach(movie => {
+      const newMovie = new Movie(movie);
+      newMovie.save();
+    })
+  };
+  resetDatabase();
+};
 
 /* const UserSchema = new mongoose.Schema({
   username: {
