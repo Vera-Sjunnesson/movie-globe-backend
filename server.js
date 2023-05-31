@@ -38,8 +38,8 @@ const Movie = mongoose.model("Movie", MovieSchema);
 
 // Resetting the db  // Needs to be run with RESET_DB=true
 if (process.env.RESET_DB) {
-  const resetDatabase = () => {
-    /* await Movie.deleteMany(); */
+  const resetDatabase = async () => {
+    await Movie.deleteMany();
     movieJson.forEach(movie => {
       const newMovie = new Movie(movie);
       newMovie.save();
