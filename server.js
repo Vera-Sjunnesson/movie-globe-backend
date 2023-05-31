@@ -7,7 +7,7 @@ import bcrypt from 'bcrypt';
 import movieJson from './data/movies.json'
 
 
-const mongoUrl = process.env.MONGO_URL || 'mongodb://127.0.0.1/project-globe'
+const mongoUrl = process.env.MONGO_URL || 'mongodb://127.0.0.1/movie-globe'
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.Promise = Promise;
 
@@ -60,7 +60,7 @@ const User = mongoose.model("User", UserSchema);
 app.get("/", (req, res) => {
   const message = "Welcome to the MovieGlobe API"
   const endpoints = (listEndPoints(app))
-  
+
   res.send({
     body: {
       message,
