@@ -36,7 +36,7 @@ const MovieSchema = new Schema({
 
 const Movie = mongoose.model("Movie", MovieSchema);
 
-// Resetting the db  // Needs to be run with RESET_DB=true
+// Resetting the db  // Runs with RESET_DB=true (from .env)
 if (process.env.RESET_DB) {
   const resetDatabase = async () => {
     await Movie.deleteMany();
@@ -48,7 +48,8 @@ if (process.env.RESET_DB) {
   resetDatabase();
 };
 
-/* const UserSchema = new mongoose.Schema({
+
+const UserSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
@@ -67,7 +68,7 @@ if (process.env.RESET_DB) {
   }
 });
 
-const User = mongoose.model("User", UserSchema); */
+const User = mongoose.model("User", UserSchema);
 
 // Start defining your routes here
 app.get("/", (req, res) => {
@@ -106,10 +107,31 @@ app.get('/movies', async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Failed to fetch movies',
-      error: err.message,
+      error: err.message
     });
   }
 });
+
+//POST movie to database
+app.post("/movies", async (req, res) => {
+  const { title, key_scene, location_image } = req.body;
+  const movie = new Movie({ title, key_scene, location_image })
+  const savedMovie = await movie.save()
+  try {
+      res.status(201).json({
+      success: true,
+      response: savedMovie,
+      message: "Movie created successfully"
+    });
+  } catch (err) {
+    res.status(400).json({
+      success: false,
+      message: 'Failed to fetch movies',
+      error: err.message
+    });
+  }
+});
+
 
 // Start the server
 app.listen(port, () => {
