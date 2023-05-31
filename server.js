@@ -35,7 +35,7 @@ const MovieSchema = new Schema({
 
 const Movie = mongoose.model("Movie", MovieSchema);
 
-const UserSchema = new mongoose.Schema({
+/* const UserSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
@@ -54,7 +54,7 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.model("User", UserSchema); */
 
 // Start defining your routes here
 app.get("/", (req, res) => {
