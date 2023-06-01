@@ -4,6 +4,8 @@ import mongoose from 'mongoose';
 import crypto from 'crypto';
 import bcrypt from 'bcrypt';
 import movieJson from './data/movies.json';
+import { Movie } from "./models/movieModel";
+import { User } from "./models/userModel";
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -46,38 +48,7 @@ const authenticateUser = async (req, res, next) => {
   }
 };
 
-/* Schemas */
-const { Schema } = mongoose;
-
-const MovieSchema = new Schema({
-  id: Number,
-  title: String,
-  key_scene: String,
-  location_image: String,
-  coordinates: [Number] // [longitude, latitude]
-});
-const Movie = mongoose.model("Movie", MovieSchema);
-
-const UserSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    required: true,
-    unique: true,
-    minLength: 2,
-    maxLength: 30
-  },
-  password: {
-    type: String,
-    required: true,
-    minLength: 6
-  },
-  accessToken: {
-    type: String,
-    default: () => crypto.randomBytes(128).toString('hex')
-  }
-});
-const User = mongoose.model("User", UserSchema);
-
+// moved schemas to movieModel and userModel
 
 /* Resetting the db  // Runs with RESET_DB=true (from .env) */
 if (process.env.RESET_DB) {
@@ -132,7 +103,6 @@ app.get('/movies', async (req, res) => {
     });
   }
 });
-
 
 /******* POST REQUESTS ***********/
 //POST movie to database
@@ -243,7 +213,6 @@ app.post("/login", async (req, res) => {
     })
   }
 });
-
 
 /* Restricted endpoints by authenticateUser() */
 app.get("/vipmovies", authenticateUser);
