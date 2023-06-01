@@ -200,7 +200,7 @@ app.get("/vipmovies", async (req, res) => {
 //app.post("/movies/:createcollection" - User can create collection
 //app.get("/movies/collections" - get user's collections
 //app.get("/movies/collections/movies" - get movies in collection
-
+//Skriv den här ser inte .env:
 //Comments model:
 //app.post("/comments" - User can post comment on movies
 //app.get("/comments" - Get user comments
