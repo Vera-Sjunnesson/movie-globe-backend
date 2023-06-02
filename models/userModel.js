@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import crypto from 'crypto';
+import mongoose from 'mongoose';
+import crypto from 'crypto'
 
 const UserSchema = mongoose.Schema({
     username: {
@@ -11,8 +11,8 @@ const UserSchema = mongoose.Schema({
     },
     password: {
       type: String,
-      required: true,
-      minLength: 6
+      /* required: true, */
+      /* minLength: 6 */
     },
     accessToken: {
       type: String,
@@ -20,4 +20,4 @@ const UserSchema = mongoose.Schema({
     }
   });
   
-  export const User = mongoose.model("User", UserSchema);
+  export const User = mongoose.model('User', UserSchema)

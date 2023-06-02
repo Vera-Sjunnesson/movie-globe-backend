@@ -1,14 +1,14 @@
 [
     {
       "id": 1,
-      "title": "Inception",
+      "title": "Batman and Harley Quinn",
       "key_scene": "Spinning top scene",
       "location_image": "https://s3.amazonaws.com/criterion-production/editorial_content_posts/hero/55-/OR5FnhktUpxZIqkG1IwUaX0nn3Srfz_original.jpg",
       "coordinates": [-118.363, 34.052]
     },
     {
       "id": 2,
-      "title": "The Shawshank Redemption",
+      "title": "Titanic",
       "key_scene": "Andy escaping through the tunnel",
       "location_image": "https://assets-jpcust.jwpsrv.com/thumbnails/2gcc6bb4-720.jpg",
       "coordinates": [-83.561, 41.676]

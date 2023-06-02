@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt';
 import { User } from '../models/userModel';
 
-export const registerController = async (req, res) => {
+export const registerUser = async (req, res) => {
     const { username, password } = req.body;
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     // At least one digit
@@ -55,4 +55,35 @@ export const registerController = async (req, res) => {
       });
     };
   };
-  
+
+  export const loginUser = async (req, res) => {
+      const { username, password } = req.body;
+    
+      try {
+        const user = await User.findOne({username});
+        // checks password
+        if (user && bcrypt.compareSync(password, user.password)) {
+          res.status(201).json({
+            success: true,
+            response: {
+              username: user.username,
+              id: user._id,
+              accessToken: user.accessToken,
+              message: "User logged in"
+            }
+          })
+        } else {
+          res.status(404).json({
+            success: false,
+            response: {
+              message: "Credentials do not match",
+            }
+          })
+        }
+      } catch (error) {
+        res.status(500).json({
+          success: false,
+          response: error
+        })
+      }
+    };

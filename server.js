@@ -1,12 +1,16 @@
 import express from "express";
 import cors from "cors";
 import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
-import movieJson from './data/movies.json';
-import { Movie } from "./models/movieModel";
-import { User } from "./models/userModel";
 import dotenv from 'dotenv';
-import { registerController } from "./controllers/registerController";
+import movieRouter from './routes/movieRoutes';
+import userRouter from './routes/userRoutes';
+import User from './models/userModel';
+import { Movie } from './models/movieModel';
+import movieJson from './data/movies.json'
+import { movieFetch } from "./movieFetch";
+/* import { getMovies } from './controllers/movieController' */
+
+
 dotenv.config();
 
 
@@ -25,6 +29,7 @@ const listEndPoints = require('express-list-endpoints');
 /* Middlewares */
 app.use(cors());
 app.use(express.json());
+
 // Authenticate the user
 const authenticateUser = async (req, res, next) => {
   const accessToken = req.header('Authorization');
@@ -48,8 +53,6 @@ const authenticateUser = async (req, res, next) => {
   }
 };
 
-// moved schemas to movieModel and userModel
-
 /* Resetting the db  // Runs with RESET_DB=true (from .env) */
 if (process.env.RESET_DB) {
   const resetDatabase = async () => {
@@ -60,6 +63,7 @@ if (process.env.RESET_DB) {
     })
   };
   resetDatabase();
+  movieFetch()
 };
 
 /********* GET REQUESTS **********/
@@ -75,91 +79,13 @@ app.get("/", (req, res) => {
   });
 });
 
-// get all movies
-app.get('/movies', async (req, res) => {
-  try {
-    const movieList = await Movie.find();
 
-    if (movieList.length) {
-      res.status(200).json({
-        success: true,
-        message: `Found ${movieList.length} movies`,
-        body: {
-          movieList: movieList,
-        },
-      });
-    } else {
-      res.status(404).json({
-        success: false,
-        message: 'Failed to fetch movies',
-        body: {},
-      });
-    }
-  } catch (err) {
-    res.status(500).json({
-      success: false,
-      message: 'Failed to fetch movies',
-      error: err.message
-    });
-  }
-});
+/* app.get("/movies", getMovies) */
 
-/******* POST REQUESTS ***********/
-//POST movie to database
-app.post("/movies", async (req, res) => {
-  const { title, key_scene, location_image } = req.body;
-  const movie = new Movie({ title, key_scene, location_image })
-  const savedMovie = await movie.save()
-  try {
-      res.status(201).json({
-      success: true,
-      response: savedMovie,
-      message: "Movie created successfully"
-    });
-  } catch (err) {
-    res.status(400).json({
-      success: false,
-      message: 'Failed to fetch movies',
-      error: err.message
-    });
-  }
-});
+app.use("/movies", movieRouter)
 
-// Register user
-app.post("/register", registerController);
-
-/* LOGIN USER */
-app.post("/login", async (req, res) => {
-  const { username, password } = req.body;
-
-  try {
-    const user = await User.findOne({username});
-    // checks password
-    if (user && bcrypt.compareSync(password, user.password)) {
-      res.status(201).json({
-        success: true,
-        response: {
-          username: user.username,
-          id: user._id,
-          accessToken: user.accessToken,
-          message: "User logged in"
-        }
-      })
-    } else {
-      res.status(404).json({
-        success: false,
-        response: {
-          message: "Credentials do not match",
-        }
-      })
-    }
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      response: error
-    })
-  }
-});
+// Register or login user
+app.use("/user", userRouter);
 
 /* Restricted endpoints by authenticateUser() */
 app.get("/vipmovies", authenticateUser);
