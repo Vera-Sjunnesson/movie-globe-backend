@@ -6,7 +6,7 @@
       "scene_description": "The protagonist drives through Iran’s mountainous gravel roads, attempting to locate someone to bury him following his intended suicide in exchange for a generous fee.",
       "movie_location_still": "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*JQeXFAjEVKfuiqQAvMtIzQ.jpeg",
       "location_image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Aerial_View_of_Tehran_26.11.2008_04-34-03.JPG",
-      "coordinates": [36.0722, 35.69439]
+      "coordinates": [36.0722, 35.6950]
     },
     {
       "id": 2,
@@ -24,7 +24,7 @@
       "scene_description": "Hsiao-Kang sells watches in the streets of Taipei for a living. A few days after his father’s death, he meets a young woman, Shiang-Chyi, who as it turns out leaves for Paris the very next day.",
       "movie_location_still": "https://inreviewonline.com/wp-content/uploads/2020/06/whattime-1.jpg",
       "location_image": "https://www.travel.taipei/content/images/attractions/112858/1024x768_attractions-image-5prozhsvyesbulzdy8msra.jpg",
-      "coordinates": [121.597366, 25.105497]
+      "coordinates": [121.5974, 25.1060]
     },
     {
       "id": 4,
@@ -42,7 +42,7 @@
       "scene_description": " A group of boys are jumping into a lake from a high platform. One boy, Ivan, can’t go through with it. His friends and his older brother, Andrei, leave him behind, and his mother has to get him down.",
       "movie_location_still": "https://i0.wp.com/projectedfigures.com/wp-content/uploads/2018/01/The-Return-2003-2.jpg?resize=810%2C540&ssl=1",
       "location_image": "https://rf4game.com/forum/uploads/monthly_2018_09/ladoga.jpg.9281bbdb56e006d49b2e72464c2d7320.jpg",
-      "coordinates": [31.500000, 61.000000]
+      "coordinates": [31.5000, 61.0000]
     },
     {
       "id": 6,
@@ -51,7 +51,7 @@
       "scene_description": " -.",
       "movie_location_still": "https://2.bp.blogspot.com/-vL9gJjf3wKA/TwoUlojNMfI/AAAAAAAAAuE/1b2wC07nn0k/s1600/city+of+god+6+.jpg",
       "location_image": "https://rf4game.com/forum/uploads/monthly_2018_09/ladoga.jpg.9281bbdb56e006d49b2e72464c2d7320.jpg",
-      "coordinates": [-43.361800, -22.946490]
+      "coordinates": [-43.3618, -22.9450]
     },
     {
       "id": 7,
@@ -60,7 +60,7 @@
       "scene_description": " -.",
       "movie_location_still": "https://assets.rbl.ms/21648286/origin.png",
       "location_image": "http://www.emedia.sn/IMG/jpg/whatsapp_image_2020-07-12_at_13.59.14.jpg",
-      "coordinates": [-17.359430, 14.739064]
+      "coordinates": [-17.3600, 14.7390]
     },
     {
       "id": 8,
@@ -69,7 +69,7 @@
       "scene_description": "In the manic opening sequence, where Rosetta, having just been fired, angrily confronts a fellow co-worker despite being chased by her boss and security.",
       "movie_location_still": "https://film-grab.com/wp-content/uploads/photo-gallery/Rosetta_001.jpg?bwg=1602241740",
       "location_image": "http://www.emedia.sn/IMG/jpg/whatsapp_image_2020-07-12_at_13.59.14.jpg",
-      "coordinates": [5.619780, 50.605430]
+      "coordinates": [5.6198, 50.6054]
     },
     {
       "id": 9,
@@ -78,7 +78,7 @@
       "scene_description": "-",
       "movie_location_still": "https://zone-critique.com/wp-content/uploads/2022/06/beau-travail6-e1655753012953.png",
       "location_image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Djib_003.JPG",
-      "coordinates": [42.413413, 11.706031]
+      "coordinates": [42.4134, 11.7060]
     },
     {
       "id": 10,
@@ -87,7 +87,7 @@
       "scene_description": "The Palace Arms on King Street West stands-in for the seedy Classic Hotel, in which Civic TV president Max Renn meets with Japanese soft-core pornography producers, in an effort to find a “tough” new kind of programming that will “break through” to audiences. Unfortunately for Hiroshima Video, Max concludes that their porn is “too soft.”",
       "movie_location_still": "http://cronenbergmuseum.tiff.net/CNMCMS/appimages/image/locs/loc_6_a.jpg",
       "location_image": "http://cronenbergmuseum.tiff.net/CNMCMS/appimages/image/locs/loc_6_b.jpg",
-      "coordinates": [-79.413340, 43.645100]
+      "coordinates": [-79.4133, 43.6451]
     }
   ]
   

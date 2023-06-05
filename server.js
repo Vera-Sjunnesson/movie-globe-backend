@@ -53,8 +53,10 @@ const authenticateUser = async (req, res, next) => {
   }
 };
 
+movieFetch();
+
 /* Resetting the db  // Runs with RESET_DB=true (from .env) */
-if (process.env.RESET_DB) {
+/* if (process.env.RESET_DB) {
   const resetDatabase = async () => {
     await MovieLocation.deleteMany();
     await OmdbMovie.deleteMany();
@@ -64,8 +66,8 @@ if (process.env.RESET_DB) {
     })
   };
   resetDatabase();
-  movieFetch();
-};
+ 
+}; */
 
 /********* GET REQUESTS **********/
 app.get("/", (req, res) => {
