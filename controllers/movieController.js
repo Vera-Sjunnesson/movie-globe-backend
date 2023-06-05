@@ -1,11 +1,12 @@
-import { Movie } from '../models/movieModel'
+import { MovieLocation } from '../models/movieModel'
+import { OmdbMovie } from '../models/movieModel';
 
 // desc: Get all movies
 // route: GET /movies
 // access: PRIVATE
 export const getAllMovies = async (req, res) => {
   try {
-    const movieList = await Movie.find();
+    const movieList = await OmdbMovie.find({}).populate('Movie_Location')
   
       if (movieList.length) {
         res.status(200).json({
@@ -35,10 +36,11 @@ export const getAllMovies = async (req, res) => {
 // route: POST /movies
 // access: PRIVATE
 export const postMovies = async (req, res) => {
-  const { title, key_scene, location_image } = req.body;
-  const movie = new Movie({ title, key_scene, location_image })
-  const savedMovie = await movie.save()
   try {
+    const { title, key_scene, location_image } = req.body;
+    const movie = new MovieLocation({ title, key_scene, location_image })
+    const savedMovie = await movie.save()
+
       res.status(201).json({
       success: true,
       response: savedMovie,
@@ -54,11 +56,11 @@ export const postMovies = async (req, res) => {
 }
 
 // desc: Get a movie
-// route: POST /movies/:id
+// route: GET /movies/:id
 // access: PRIVATE
 export const getMovie = async (req, res) => {
   try {
-    const singleMovie = await Movie.findById(req.params.id);
+    const singleMovie = await MovieLocation.findById(req.params.id);
     if (singleMovie) {
       res.status(200).json({
         success: true,
@@ -88,13 +90,21 @@ export const getMovie = async (req, res) => {
 // access: PRIVATE
 export const updateMovie = async (req, res) => {
   try {
-    const singleMovie = await Movie.findById(req.params.id);
+    const { title, key_scene, location_image } = req.body;
+    const singleMovie = await MovieLocation.findById(req.params.id);
+    
     if (singleMovie) {
+      singleMovie.title = title;
+      singleMovie.key_scene = key_scene;
+      singleMovie.location_image = location_image;
+
+      const updatedMovie = await singleMovie.save();
+
       res.status(200).json({
         success: true,
         message: `Updated movie ${singleMovie}`,
         body: {
-          singleMovie: singleMovie,
+          updatedMovie: updatedMovie,
         },
       })
     } else {
@@ -118,7 +128,7 @@ export const updateMovie = async (req, res) => {
 // access: PRIVATE
 export const deleteMovie = async (req, res) => {
   try {
-    const movieById = await Movie.findByIdAndDelete(req.params.id);
+    const movieById = await MovieLocation.findByIdAndDelete(req.params.id);
     if (movieById) {
       res.status(200).json({
         success: true,

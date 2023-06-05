@@ -5,10 +5,10 @@ import dotenv from 'dotenv';
 import movieRouter from './routes/movieRoutes';
 import userRouter from './routes/userRoutes';
 import User from './models/userModel';
-import { Movie } from './models/movieModel';
+import { MovieLocation } from './models/movieModel';
+import { OmdbMovie } from './models/movieModel';
 import movieJson from './data/movies.json'
 import { movieFetch } from "./movieFetch";
-/* import { getMovies } from './controllers/movieController' */
 
 
 dotenv.config();
@@ -56,14 +56,15 @@ const authenticateUser = async (req, res, next) => {
 /* Resetting the db  // Runs with RESET_DB=true (from .env) */
 if (process.env.RESET_DB) {
   const resetDatabase = async () => {
-    await Movie.deleteMany();
+    await MovieLocation.deleteMany();
+    await OmdbMovie.deleteMany();
     movieJson.forEach(movie => {
-      const newMovie = new Movie(movie);
+      const newMovie = new MovieLocation(movie);
       newMovie.save();
     })
   };
   resetDatabase();
-  movieFetch()
+  movieFetch();
 };
 
 /********* GET REQUESTS **********/
@@ -78,9 +79,6 @@ app.get("/", (req, res) => {
     }
   });
 });
-
-
-/* app.get("/movies", getMovies) */
 
 app.use("/movies", movieRouter)
 
