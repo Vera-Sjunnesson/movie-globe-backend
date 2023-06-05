@@ -6,7 +6,7 @@ import { OmdbMovie } from '../models/movieModel';
 // access: PRIVATE
 export const getAllMovies = async (req, res) => {
   try {
-    const movieList = await OmdbMovie.find({}).populate('Movie_Location')
+    const movieList = await OmdbMovie.find({}).populate('Movie_Location').save()
   
       if (movieList.length) {
         res.status(200).json({

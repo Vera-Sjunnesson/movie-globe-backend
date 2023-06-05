@@ -7,7 +7,7 @@ import userRouter from './routes/userRoutes';
 import User from './models/userModel';
 import { MovieLocation } from './models/movieModel';
 import { OmdbMovie } from './models/movieModel';
-import movieJson from './data/movies.json'
+import movieJson from './data/movies.json';
 import { movieFetch } from "./movieFetch";
 
 
