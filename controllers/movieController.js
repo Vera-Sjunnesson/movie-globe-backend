@@ -56,7 +56,8 @@ export const getAllMovies = async (req, res) => {
       await existingMovie.save();
     } else {
 
-      const movieLocation = await MovieLocation.findOne({ _id });
+
+      const movieLocation = await MovieLocation.find({});
 
       if (movieLocation) {
         // If the MovieLocation document is found
@@ -89,7 +90,7 @@ export const getAllMovies = async (req, res) => {
           Production: item.Production,
           Website: item.Website,
           Response: item.Response,
-          Movie_Location: movieLocationId,
+          movie_location: movieLocationId,
         });
         await newMovie.save();
         /* await newMovie.findOne({_id}).populate({path: 'movie_location'}) */
