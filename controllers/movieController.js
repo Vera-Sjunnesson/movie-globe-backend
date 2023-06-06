@@ -101,7 +101,7 @@ export const getAllMovies = async (req, res) => {
   }
 
       // Retrieve the updated movie list after saving the movies
-      const movieList = await OmdbMovie.find({}).populate('movie_location').exec()
+      const movieList = await OmdbMovie.find({}).populate({path: "movie_location", model: 'MovieLocation', select: "coordinates"}).exec()
     if (movieList) {
       res.status(200).json({
         success: true,
