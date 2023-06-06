@@ -56,7 +56,7 @@ export const getAllMovies = async (req, res) => {
       await existingMovie.save();
     } else {
 
-      const movieLocation = await MovieLocation.find({});
+      const movieLocation = await MovieLocation.findOne({ _id });
 
       if (movieLocation) {
         // If the MovieLocation document is found
@@ -92,7 +92,7 @@ export const getAllMovies = async (req, res) => {
           Movie_Location: movieLocationId,
         });
         await newMovie.save();
-        await newMovie.findOne({_id}).populate({path: 'movie_location'})
+        /* await newMovie.findOne({_id}).populate({path: 'movie_location'}) */
       } else {
         // If the MovieLocation document is not found, handle the case accordingly
         console.log('MovieLocation not found');
@@ -101,7 +101,7 @@ export const getAllMovies = async (req, res) => {
   }
 
       // Retrieve the updated movie list after saving the movies
-      const movieList = await OmdbMovie.find({}).populate({path: 'movie_location'})
+      const movieList = await OmdbMovie.find({}).populate('movie_location').exec()
     if (movieList) {
       res.status(200).json({
         success: true,

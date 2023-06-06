@@ -42,7 +42,7 @@ const omdbSchema = mongoose.Schema({
     Website: String,
     Response: String,
     movie_location: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: mongoose.Types.ObjectId,
       ref: 'MovieLocation'
     } 
 });
