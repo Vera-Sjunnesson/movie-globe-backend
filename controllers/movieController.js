@@ -51,17 +51,13 @@ export const getAllMovies = async (req, res) => {
       // Handle the case when the movie already exists
       existingMovie.Year = item.Year;
       // Update other fields as needed
-      /* await existingMovie.populate('movie_location') */
+      
       /* existingMovie = await OmdbMovie.findOne({ Title: item.Title }).populate('Movie_Location'); */
       await existingMovie.save();
     } else {
 
 
       const movieLocation = await MovieLocation.find({});
-
-      if (movieLocation) {
-        // If the MovieLocation document is found
-        const movieLocationId = movieLocation._id;
 
         // Create a new movie document with the fetched data
         const newMovie = new OmdbMovie({
@@ -90,19 +86,19 @@ export const getAllMovies = async (req, res) => {
           Production: item.Production,
           Website: item.Website,
           Response: item.Response,
-          movie_location: movieLocationId,
+          movie_location: movieLocation._id
         });
         await newMovie.save();
         /* await newMovie.findOne({_id}).populate({path: 'movie_location'}) */
-      } else {
-        // If the MovieLocation document is not found, handle the case accordingly
-        console.log('MovieLocation not found');
-      }
     }
   }
 
       // Retrieve the updated movie list after saving the movies
-      const movieList = await OmdbMovie.find({}).populate({path: "movie_location", model: 'MovieLocation', select: "coordinates"}).exec()
+      const movieList = await OmdbMovie.find({}).populate({
+        path: 'movie_location',
+        model: 'MovieLocation',
+      });
+    
     if (movieList) {
       res.status(200).json({
         success: true,
