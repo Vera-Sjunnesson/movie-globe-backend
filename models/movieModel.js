@@ -41,7 +41,7 @@ const omdbSchema = mongoose.Schema({
     Production: String,
     Website: String,
     Response: String,
-    movielocation: {
+    movie_location: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'MovieLocation'
     } 
@@ -56,7 +56,7 @@ omdbSchema.pre('save', async function (next) {
 
   if (movieLocation) {
     // Set the omdbMovie reference in the Movie document
-    this.movielocation = movieLocation._id;
+    this.movie_location = movieLocation._id;
   }
 
   next();
