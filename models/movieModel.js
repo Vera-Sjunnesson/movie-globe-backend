@@ -12,8 +12,6 @@ const MovieLocationSchema = mongoose.Schema(
   }
 );
 
-const MovieLocation = mongoose.model('MovieLocation', MovieLocationSchema);
-
 const omdb_DB = mongoose.connection
 omdb_DB.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
@@ -63,6 +61,8 @@ omdbSchema.pre('save', async function (next) {
 
   next();
 });
+
+const MovieLocation = mongoose.model('MovieLocation', MovieLocationSchema);
 
 const OmdbMovie = mongoose.model('OmdbMovie', omdbSchema);
 
