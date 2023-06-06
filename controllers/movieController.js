@@ -1,14 +1,14 @@
-import axios from 'axios';
+/* import axios from 'axios'; */
 
 import { MovieLocation } from '../models/movieModel'
-import { OmdbMovie } from '../models/movieModel';
+/* import { OmdbMovie } from '../models/movieModel'; */
 
 // desc: Get all movies
 // route: GET /movies
 // access: PRIVATE
-/* export const getAllMovies = async (req, res) => {
+export const getAllMovies = async (req, res) => {
   try {
-    const movieList = await OmdbMovie.find({}).populate('Movie_Location')
+    const movieList = await MovieLocation.find({})
   
       if (movieList.length) {
         res.status(200).json({
@@ -32,34 +32,31 @@ import { OmdbMovie } from '../models/movieModel';
         error: err.message
       });
     }
-} */
+}
 
 // desc: Get all movies
 // route: GET /movies
 // access: PRIVATE
-export const getAllMovies = async (req, res) => {
+/* export const getAllMovies = async (req, res) => {
   const titles = ['Taste%20of%20Cherry', 'Babyteeth', 'What%20Time%20Is%20It%20There?', 'Amores%20Perros', 'The%20Return', 'City%20of%20God', 'Atlantique', 'Rosetta', 'Beau%20Travail', 'Videodrome'];
   try {
     for (const title of titles) {
     const response = await axios.get(`https://www.omdbapi.com/?t=${title}&apikey=${process.env.API_KEY}&`);
     const item = response.data;
 
-    // Check if a movie with the same title already exists in the collection
     let existingMovie = await OmdbMovie.findOne({ Title: item.Title });
     
     if (existingMovie) {
-      // Handle the case when the movie already exists
+   
       existingMovie.Year = item.Year;
-      // Update other fields as needed
-      
-      /* existingMovie = await OmdbMovie.findOne({ Title: item.Title }).populate('Movie_Location'); */
+  
       await existingMovie.save();
     } else {
 
 
       const movieLocation = await MovieLocation.find({});
 
-        // Create a new movie document with the fetched data
+    
         const newMovie = new OmdbMovie({
           Title: item.Title,
           Year: item.Year,
@@ -89,15 +86,11 @@ export const getAllMovies = async (req, res) => {
           movie_location: movieLocation._id
         });
         await newMovie.save();
-        /* await newMovie.findOne({_id}).populate({path: 'movie_location'}) */
     }
   }
 
-      // Retrieve the updated movie list after saving the movies
-      const movieList = await OmdbMovie.find({}).populate({
-        path: 'movie_location',
-        model: 'MovieLocation',
-      });
+
+      const movieList = await OmdbMovie.find({}).populate('movie_location');
     
     if (movieList) {
       res.status(200).json({
@@ -121,7 +114,7 @@ export const getAllMovies = async (req, res) => {
       error: err.message
     });
   }
-}
+} */
 
 // desc: Set movies
 // route: POST /movies
