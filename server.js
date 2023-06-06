@@ -7,8 +7,8 @@ import userRouter from './routes/userRoutes';
 import User from './models/userModel';
 import { MovieLocation } from './models/movieModel';
 import { OmdbMovie } from './models/movieModel';
-import movieJson from './data/movies.json';
-import { movieFetch } from "./movieFetch";
+/* import movieJson from './data/movies.json';
+import { movieFetch } from "./movieFetch"; */
 
 
 dotenv.config();
@@ -53,7 +53,8 @@ const authenticateUser = async (req, res, next) => {
   }
 };
 
-movieFetch();
+
+/* movieFetch(); */
 
 /* Resetting the db  // Runs with RESET_DB=true (from .env) */
 /* if (process.env.RESET_DB) {
@@ -66,7 +67,6 @@ movieFetch();
     })
   };
   resetDatabase();
- 
 }; */
 
 /********* GET REQUESTS **********/

@@ -1,10 +1,12 @@
+import axios from 'axios';
+
 import { MovieLocation } from '../models/movieModel'
 import { OmdbMovie } from '../models/movieModel';
 
 // desc: Get all movies
 // route: GET /movies
 // access: PRIVATE
-export const getAllMovies = async (req, res) => {
+/* export const getAllMovies = async (req, res) => {
   try {
     const movieList = await OmdbMovie.find({}).populate('Movie_Location')
   
@@ -30,6 +32,83 @@ export const getAllMovies = async (req, res) => {
         error: err.message
       });
     }
+} */
+
+// desc: Get all movies
+// route: GET /movies
+// access: PRIVATE
+export const getAllMovies = async (req, res) => {
+  const titles = ['Taste%20of%20Cherry', 'Babyteeth', 'What%20Time%20Is%20It%20There?', 'Amores%20Perros', 'The%20Return', 'City%20of%20God', 'Atlantique', 'Rosetta', 'Beau%20Travail', 'Videodrome'];
+  try {
+    for (const title of titles) {
+    const response = await axios.get(`https://www.omdbapi.com/?t=${title}&apikey=${process.env.API_KEY}&`);
+    const item = response.data;
+
+    // Check if a movie with the same title already exists in the collection
+    const existingMovie = await OmdbMovie.findOne({ Title: item.Title });
+    
+    if (existingMovie) {
+      // Handle the case when the movie already exists
+      existingMovie.Year = item.Year;
+      // Update other fields as needed
+      await existingMovie.save();
+    } else {
+      // Create a new movie document with the fetched data
+      const newMovie = new OmdbMovie({
+        Title: item.Title,
+        Year: item.Year,
+        Rated: item.Rated,
+        Released: item.Released,
+        Runtime: item.Runtime,
+        Genre: item.Genre,
+        Director: item.Director,
+        Writer: item. Writer,
+        Actors: item.Actors,
+        Plot: item.Plot,
+        Language: item.Language,
+        Country: item.Country,
+        Awards: item.Awards,
+        Poster: item.Poster,
+        Ratings: item.Ratings,
+        Metascore: item.Metascore,
+        imdbRating: item.imdbRating,
+        imdbVotes: item.imdbVotes,
+        imdbID: item.imdbID,
+        Type: item.Type,
+        DVD: item.DVD,
+        BoxOffice: item.BoxOffice,
+        Production: item.Production,
+        Website: item.Website,
+        Response: item.Response,
+      });
+      await newMovie.save();
+    }
+  }
+
+  const movieList = await OmdbMovie.find({}).populate('Movie_Location');
+
+    if (movieList) {
+      res.status(200).json({
+        success: true,
+        message: `Found ${movieList.length} movies`,
+        body: {
+          movieList: movieList,
+        },
+      });
+    } else {
+      res.status(404).json({
+        success: false,
+        message: 'Failed to fetch movies',
+        body: {},
+      });
+    }
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: 'Failed to fetch movies',
+      error: err.message
+    });
+  }
 }
 
 // desc: Set movies

@@ -14,11 +14,11 @@ const MovieLocationSchema = mongoose.Schema(
 
 const MovieLocation = mongoose.model('MovieLocation', MovieLocationSchema);
 
+const omdb_DB = mongoose.connection
+omdb_DB.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 const omdbSchema = mongoose.Schema({
-    Title: {
-      type: String,
-      unique: true
-    },
+    Title: String,
     Year: String,
     Rated: String,
     Released: String,
