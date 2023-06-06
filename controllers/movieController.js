@@ -51,45 +51,53 @@ export const getAllMovies = async (req, res) => {
       // Handle the case when the movie already exists
       existingMovie.Year = item.Year;
       // Update other fields as needed
-      await existingMovie.populate('Movie_Location').execPopulate();
+      await existingMovie.populate('Movie_Location')
       /* existingMovie = await OmdbMovie.findOne({ Title: item.Title }).populate('Movie_Location'); */
       await existingMovie.save();
     } else {
 
-      const movieLocationId = MovieLocation.findOne({_id})
-      // Create a new movie document with the fetched data
-      const newMovie = new OmdbMovie({
-        Title: item.Title,
-        Year: item.Year,
-        Rated: item.Rated,
-        Released: item.Released,
-        Runtime: item.Runtime,
-        Genre: item.Genre,
-        Director: item.Director,
-        Writer: item. Writer,
-        Actors: item.Actors,
-        Plot: item.Plot,
-        Language: item.Language,
-        Country: item.Country,
-        Awards: item.Awards,
-        Poster: item.Poster,
-        Ratings: item.Ratings,
-        Metascore: item.Metascore,
-        imdbRating: item.imdbRating,
-        imdbVotes: item.imdbVotes,
-        imdbID: item.imdbID,
-        Type: item.Type,
-        DVD: item.DVD,
-        BoxOffice: item.BoxOffice,
-        Production: item.Production,
-        Website: item.Website,
-        Response: item.Response,
-        Movie_Location: movieLocationId,
-      });
+      const movieLocation = await MovieLocation.findOne({title: item.title});
 
-      await newMovie.populate('Movie_Location').execPopulate();
-      /* existingMovie = await OmdbMovie.findOne({ Title: item.Title }).populate('Movie_Location'); */
-      await newMovie.save();
+      if (movieLocation) {
+        // If the MovieLocation document is found
+        const movieLocationId = movieLocation._id;
+
+        // Create a new movie document with the fetched data
+        const newMovie = new OmdbMovie({
+          Title: item.Title,
+          Year: item.Year,
+          Rated: item.Rated,
+          Released: item.Released,
+          Runtime: item.Runtime,
+          Genre: item.Genre,
+          Director: item.Director,
+          Writer: item.Writer,
+          Actors: item.Actors,
+          Plot: item.Plot,
+          Language: item.Language,
+          Country: item.Country,
+          Awards: item.Awards,
+          Poster: item.Poster,
+          Ratings: item.Ratings,
+          Metascore: item.Metascore,
+          imdbRating: item.imdbRating,
+          imdbVotes: item.imdbVotes,
+          imdbID: item.imdbID,
+          Type: item.Type,
+          DVD: item.DVD,
+          BoxOffice: item.BoxOffice,
+          Production: item.Production,
+          Website: item.Website,
+          Response: item.Response,
+          Movie_Location: movieLocationId,
+        });
+
+        await newMovie.populate('Movie_Location').execPopulate();
+        await newMovie.save();
+      } else {
+        // If the MovieLocation document is not found, handle the case accordingly
+        console.log('MovieLocation not found');
+      }
     }
   }
 
