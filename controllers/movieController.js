@@ -51,7 +51,7 @@ export const getAllMovies = async (req, res) => {
       // Handle the case when the movie already exists
       existingMovie.Year = item.Year;
       // Update other fields as needed
-      await existingMovie.populate('Movie_Location')
+      await existingMovie.populate('movielocations')
       /* existingMovie = await OmdbMovie.findOne({ Title: item.Title }).populate('Movie_Location'); */
       await existingMovie.save();
     } else {
@@ -92,7 +92,7 @@ export const getAllMovies = async (req, res) => {
           Movie_Location: movieLocationId,
         });
 
-        await newMovie.populate('Movie_Location').execPopulate();
+        await newMovie.populate('movielocations').execPopulate();
         await newMovie.save();
       } else {
         // If the MovieLocation document is not found, handle the case accordingly
@@ -102,7 +102,7 @@ export const getAllMovies = async (req, res) => {
   }
 
       // Retrieve the updated movie list after saving the movies
-      const movieList = await OmdbMovie.find({}).populate('Movie_Location', 'coordinates')
+      const movieList = await OmdbMovie.find({}).populate('movielocations', 'coordinates')
 
     if (movieList) {
       res.status(200).json({
@@ -133,8 +133,8 @@ export const getAllMovies = async (req, res) => {
 // access: PRIVATE
 export const postMovies = async (req, res) => {
   try {
-    const { title, key_scene, location_image } = req.body;
-    const movie = new MovieLocation({ title, key_scene, location_image })
+    const { title, location, movie_location_still } = req.body;
+    const movie = new MovieLocation({ title, location, movie_location_still })
     const savedMovie = await movie.save()
 
       res.status(201).json({
@@ -186,13 +186,13 @@ export const getMovie = async (req, res) => {
 // access: PRIVATE
 export const updateMovie = async (req, res) => {
   try {
-    const { title, key_scene, location_image } = req.body;
+    const { title, location, movie_location_still } = req.body;
     const singleMovie = await MovieLocation.findById(req.params.id);
     
     if (singleMovie) {
       singleMovie.title = title;
-      singleMovie.key_scene = key_scene;
-      singleMovie.location_image = location_image;
+      singleMovie.location = location;
+      singleMovie.movie_location_still = movie_location_still;
 
       const updatedMovie = await singleMovie.save();
 
