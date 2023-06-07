@@ -7,49 +7,46 @@
     "movie_location_still": "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*JQeXFAjEVKfuiqQAvMtIzQ.jpeg",
     "location_image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Aerial_View_of_Tehran_26.11.2008_04-34-03.JPG",
     "coordinates": [35.6950, 36.0722],
-    "omdb_data": {
-      "Title": "Taste of Cherry",
-      "Year": "1997",
-      "Rated": "Not Rated",
-      "Released": "26 Nov 1997",
-      "Runtime": "95 min",
-      "Genre": "Drama",
-      "Director": "Abbas Kiarostami",
-      "Writer": "Abbas Kiarostami",
-      "Actors": "Homayoun Ershadi, Abdolrahman Bagheri, Afshin Khorshid Bakhtiari",
-      "Plot": "An Iranian man drives his car in search of someone who will quietly bury him under a cherry tree after he commits suicide.",
-      "Language": "Persian",
-      "Country": "Iran, France",
-      "Awards": "4 wins & 6 nominations",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNDg3Y2Q5YzMtMzNlYy00Y2MxLTkwYjctN2RhNDQ2NzczYWU4XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
-      "Ratings": [
-          {
-              "Source": "Internet Movie Database",
-              "Value": "7.7/10",
-              "_id": "647f42e5f1af4312047af7a1"
-          },
-          {
-              "Source": "Rotten Tomatoes",
-              "Value": "83%",
-              "_id": "647f42e5f1af4312047af7a2"
-          },
-          {
-              "Source": "Metacritic",
-              "Value": "80/100",
-              "_id": "647f42e5f1af4312047af7a3"
-          }
-      ],
-      "Metascore": "80",
-      "imdbRating": "7.7",
-      "imdbVotes": "33,139",
-      "imdbID": "tt0120265",
-      "Type": "movie",
-      "DVD": "01 Apr 2014",
-      "BoxOffice": "N/A",
-      "Production": "N/A",
-      "Website": "N/A",
-      "Response": "True"
-    }
+    "Year": "1997",
+    "Rated": "Not Rated",
+    "Released": "26 Nov 1997",
+    "Runtime": "95 min",
+    "Genre": "Drama",
+    "Director": "Abbas Kiarostami",
+    "Writer": "Abbas Kiarostami",
+    "Actors": "Homayoun Ershadi, Abdolrahman Bagheri, Afshin Khorshid Bakhtiari",
+    "Plot": "An Iranian man drives his car in search of someone who will quietly bury him under a cherry tree after he commits suicide.",
+    "Language": "Persian",
+    "Country": "Iran, France",
+    "Awards": "4 wins & 6 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNDg3Y2Q5YzMtMzNlYy00Y2MxLTkwYjctN2RhNDQ2NzczYWU4XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+    "Ratings": [
+        {
+            "Source": "Internet Movie Database",
+            "Value": "7.7/10",
+            "_id": "647f42e5f1af4312047af7a1"
+        },
+        {
+            "Source": "Rotten Tomatoes",
+            "Value": "83%",
+            "_id": "647f42e5f1af4312047af7a2"
+        },
+        {
+            "Source": "Metacritic",
+            "Value": "80/100",
+            "_id": "647f42e5f1af4312047af7a3"
+        }
+    ],
+    "Metascore": "80",
+    "imdbRating": "7.7",
+    "imdbVotes": "33,139",
+    "imdbID": "tt0120265",
+    "Type": "movie",
+    "DVD": "01 Apr 2014",
+    "BoxOffice": "N/A",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
   },
   {
     "id": 2,
@@ -59,49 +56,46 @@
     "movie_location_still": "https://assets-jpcust.jwpsrv.com/thumbnails/2gcc6bb4-640.jpg",
     "location_image": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Sydney_terminal_platforms.jpg",
     "coordinates": [-33.8930, 151.1988],
-    "omdb_data": {
-      "Title": "Babyteeth",
-      "Year": "2019",
-      "Rated": "MA-17",
-      "Released": "19 Jun 2020",
-      "Runtime": "118 min",
-      "Genre": "Comedy, Drama, Music",
-      "Director": "Shannon Murphy",
-      "Writer": "Rita Kalnejais",
-      "Actors": "Eliza Scanlen, Michelle Lotters, Toby Wallace",
-      "Plot": "Milla, a seriously ill teenager, falls in love with a drug dealer, Moses, her parents' worst nightmare.",
-      "Language": "English",
-      "Country": "Australia",
-      "Awards": "Nominated for 1 BAFTA Award30 wins & 34 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMGRhMzRkYzEtMDBjNy00YjkxLWJjNzctNzEwNGNhZDUyZWI0XkEyXkFqcGdeQXVyMTE1MzI2NzIz._V1_SX300.jpg",
-      "Ratings": [
-          {
-              "Source": "Internet Movie Database",
-              "Value": "7.2/10",
-              "_id": "647f42e6f1af4312047af7a9"
-          },
-          {
-              "Source": "Rotten Tomatoes",
-              "Value": "94%",
-              "_id": "647f42e6f1af4312047af7aa"
-          },
-          {
-              "Source": "Metacritic",
-              "Value": "77/100",
-              "_id": "647f42e6f1af4312047af7ab"
-          }
-      ],
-      "Metascore": "77",
-      "imdbRating": "7.2",
-      "imdbVotes": "17,570",
-      "imdbID": "tt8399664",
-      "Type": "movie",
-      "DVD": "18 Jun 2020",
-      "BoxOffice": "$4,507",
-      "Production": "N/A",
-      "Website": "N/A",
-      "Response": "True"
-    }
+    "Year": "2019",
+    "Rated": "MA-17",
+    "Released": "19 Jun 2020",
+    "Runtime": "118 min",
+    "Genre": "Comedy, Drama, Music",
+    "Director": "Shannon Murphy",
+    "Writer": "Rita Kalnejais",
+    "Actors": "Eliza Scanlen, Michelle Lotters, Toby Wallace",
+    "Plot": "Milla, a seriously ill teenager, falls in love with a drug dealer, Moses, her parents' worst nightmare.",
+    "Language": "English",
+    "Country": "Australia",
+    "Awards": "Nominated for 1 BAFTA Award30 wins & 34 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMGRhMzRkYzEtMDBjNy00YjkxLWJjNzctNzEwNGNhZDUyZWI0XkEyXkFqcGdeQXVyMTE1MzI2NzIz._V1_SX300.jpg",
+    "Ratings": [
+        {
+            "Source": "Internet Movie Database",
+            "Value": "7.2/10",
+            "_id": "647f42e6f1af4312047af7a9"
+        },
+        {
+            "Source": "Rotten Tomatoes",
+            "Value": "94%",
+            "_id": "647f42e6f1af4312047af7aa"
+        },
+        {
+            "Source": "Metacritic",
+            "Value": "77/100",
+            "_id": "647f42e6f1af4312047af7ab"
+        }
+    ],
+    "Metascore": "77",
+    "imdbRating": "7.2",
+    "imdbVotes": "17,570",
+    "imdbID": "tt8399664",
+    "Type": "movie",
+    "DVD": "18 Jun 2020",
+    "BoxOffice": "$4,507",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
   },
   {
     "id": 3,
@@ -111,49 +105,47 @@
     "movie_location_still": "https://inreviewonline.com/wp-content/uploads/2020/06/whattime-1.jpg",
     "location_image": "https://www.travel.taipei/content/images/attractions/112858/1024x768_attractions-image-5prozhsvyesbulzdy8msra.jpg",
     "coordinates": [25.1060, 121.5974],
-    "omdb_data": {
-      "Title": "What Time Is It There?",
-      "Year": "2001",
-      "Rated": "Not Rated",
-      "Released": "26 Sep 2001",
-      "Runtime": "116 min",
-      "Genre": "Drama, Romance",
-      "Director": "Ming-liang Tsai",
-      "Writer": "Ming-liang Tsai, Pi-ying Yang",
-      "Actors": "Kang-sheng Lee, Shiang-chyi Chen, Yi-Ching Lu",
-      "Plot": "A watch salesman meets a young woman soon leaving for Paris and becomes infatuated, so he begins to change all the clocks in Taipei to Paris time.",
-      "Language": "Mandarin, French, Min Nan, English",
-      "Country": "Taiwan, France",
-      "Awards": "11 wins & 8 nominations",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNTMzNDIzNjYyOF5BMl5BanBnXkFtZTcwODE4OTQyMQ@@._V1_SX300.jpg",
-      "Ratings": [
-          {
-              "Source": "Internet Movie Database",
-              "Value": "7.3/10",
-              "_id": "647f42e6f1af4312047af7b1"
-          },
-          {
-              "Source": "Rotten Tomatoes",
-              "Value": "85%",
-              "_id": "647f42e6f1af4312047af7b2"
-          },
-          {
-              "Source": "Metacritic",
-              "Value": "79/100",
-              "_id": "647f42e6f1af4312047af7b3"
-          }
-      ],
-      "Metascore": "79",
-      "imdbRating": "7.3",
-      "imdbVotes": "5,160",
-      "imdbID": "tt0269746",
-      "Type": "movie",
-      "DVD": "20 Aug 2002",
-      "BoxOffice": "$195,760",
-      "Production": "N/A",
-      "Website": "N/A",
-      "Response": "True"
-    }
+    "Title": "What Time Is It There?",
+    "Year": "2001",
+    "Rated": "Not Rated",
+    "Released": "26 Sep 2001",
+    "Runtime": "116 min",
+    "Genre": "Drama, Romance",
+    "Director": "Ming-liang Tsai",
+    "Writer": "Ming-liang Tsai, Pi-ying Yang",
+    "Actors": "Kang-sheng Lee, Shiang-chyi Chen, Yi-Ching Lu",
+    "Plot": "A watch salesman meets a young woman soon leaving for Paris and becomes infatuated, so he begins to change all the clocks in Taipei to Paris time.",
+    "Language": "Mandarin, French, Min Nan, English",
+    "Country": "Taiwan, France",
+    "Awards": "11 wins & 8 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNTMzNDIzNjYyOF5BMl5BanBnXkFtZTcwODE4OTQyMQ@@._V1_SX300.jpg",
+    "Ratings": [
+        {
+            "Source": "Internet Movie Database",
+            "Value": "7.3/10",
+            "_id": "647f42e6f1af4312047af7b1"
+        },
+        {
+            "Source": "Rotten Tomatoes",
+            "Value": "85%",
+            "_id": "647f42e6f1af4312047af7b2"
+        },
+        {
+            "Source": "Metacritic",
+            "Value": "79/100",
+            "_id": "647f42e6f1af4312047af7b3"
+        }
+    ],
+    "Metascore": "79",
+    "imdbRating": "7.3",
+    "imdbVotes": "5,160",
+    "imdbID": "tt0269746",
+    "Type": "movie",
+    "DVD": "20 Aug 2002",
+    "BoxOffice": "$195,760",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
   },
   {
     "id": 4,
@@ -163,49 +155,47 @@
     "movie_location_still": "https://scenebygreen.files.wordpress.com/2022/01/screen-shot-2022-01-20-at-9.35.06-pm.png?w=1024",
     "location_image": "https://i.postimg.cc/CKP53g2Q/Screenshot-2023-06-05-at-00-29-13.png",
     "coordinates": [19.4007, -99.1573],
-    "omdb_data": {
-      "Title": "Amores Perros",
-      "Year": "2000",
-      "Rated": "R",
-      "Released": "13 Apr 2001",
-      "Runtime": "154 min",
-      "Genre": "Drama, Thriller",
-      "Director": "Alejandro G. Iñárritu",
-      "Writer": "Guillermo Arriaga",
-      "Actors": "Emilio Echevarría, Gael García Bernal, Goya Toledo",
-      "Plot": "A horrific car accident connects three stories, each involving characters dealing with loss, regret, and life's harsh realities, all in the name of love.",
-      "Language": "Spanish",
-      "Country": "Mexico",
-      "Awards": "Nominated for 1 Oscar. 55 wins & 25 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BZjUxNmEwOGItMTBmYi00MWQ1LWExY2MtNDUxMjI0OWM4M2NiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
-      "Ratings": [
-          {
-              "Source": "Internet Movie Database",
-              "Value": "8.1/10",
-              "_id": "647f42e6f1af4312047af7b9"
-          },
-          {
-              "Source": "Rotten Tomatoes",
-              "Value": "93%",
-              "_id": "647f42e6f1af4312047af7ba"
-          },
-          {
-              "Source": "Metacritic",
-              "Value": "83/100",
-              "_id": "647f42e6f1af4312047af7bb"
-          }
-      ],
-      "Metascore": "83",
-      "imdbRating": "8.1",
-      "imdbVotes": "245,379",
-      "imdbID": "tt0245712",
-      "Type": "movie",
-      "DVD": "25 Sep 2001",
-      "BoxOffice": "$5,408,467",
-      "Production": "N/A",
-      "Website": "N/A",
-      "Response": "True"
-    }
+    "Title": "Amores Perros",
+    "Year": "2000",
+    "Rated": "R",
+    "Released": "13 Apr 2001",
+    "Runtime": "154 min",
+    "Genre": "Drama, Thriller",
+    "Director": "Alejandro G. Iñárritu",
+    "Writer": "Guillermo Arriaga",
+    "Actors": "Emilio Echevarría, Gael García Bernal, Goya Toledo",
+    "Plot": "A horrific car accident connects three stories, each involving characters dealing with loss, regret, and life's harsh realities, all in the name of love.",
+    "Language": "Spanish",
+    "Country": "Mexico",
+    "Awards": "Nominated for 1 Oscar. 55 wins & 25 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZjUxNmEwOGItMTBmYi00MWQ1LWExY2MtNDUxMjI0OWM4M2NiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+    "Ratings": [
+        {
+            "Source": "Internet Movie Database",
+            "Value": "8.1/10",
+            "_id": "647f42e6f1af4312047af7b9"
+        },
+        {
+            "Source": "Rotten Tomatoes",
+            "Value": "93%",
+            "_id": "647f42e6f1af4312047af7ba"
+        },
+        {
+            "Source": "Metacritic",
+            "Value": "83/100",
+            "_id": "647f42e6f1af4312047af7bb"
+        }
+    ],
+    "Metascore": "83",
+    "imdbRating": "8.1",
+    "imdbVotes": "245,379",
+    "imdbID": "tt0245712",
+    "Type": "movie",
+    "DVD": "25 Sep 2001",
+    "BoxOffice": "$5,408,467",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
   },
   {
     "id": 5,
@@ -215,44 +205,42 @@
     "movie_location_still": "https://i0.wp.com/projectedfigures.com/wp-content/uploads/2018/01/The-Return-2003-2.jpg?resize=810%2C540&ssl=1",
     "location_image": "https://rf4game.com/forum/uploads/monthly_2018_09/ladoga.jpg.9281bbdb56e006d49b2e72464c2d7320.jpg",
     "coordinates": [61.0000, 31.5000],
-    "omdb_data": {
-      "Title": "The Return",
-      "Year": "2003",
-      "Rated": "Not Rated",
-      "Released": "25 Jun 2003",
-      "Runtime": "110 min",
-      "Genre": "Drama",
-      "Director": "Andrey Zvyagintsev",
-      "Writer": "Vladimir Moiseenko, Aleksandr Novototskiy-Vlasov",
-      "Actors": "Vladimir Garin, Ivan Dobronravov, Konstantin Lavronenko",
-      "Plot": "In the Russian wilderness, two brothers face a range of new, conflicting emotions when their father - a man they know only through a single photograph - resurfaces.",
-      "Language": "Russian",
-      "Country": "Russia",
-      "Awards": "34 wins & 20 nominations",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BODI1YTAzZmQtYjg5Ny00ODc1LTgxYTEtOWRlYmYzNzAwMDY5XkEyXkFqcGdeQXVyNzMzMjU5NDY@._V1_SX300.jpg",
-      "Ratings": [
-          {
-              "Source": "Internet Movie Database",
-              "Value": "7.9/10",
-              "_id": "647f42e6f1af4312047af7c1"
-          },
-          {
-              "Source": "Metacritic",
-              "Value": "82/100",
-              "_id": "647f42e6f1af4312047af7c2"
-          }
-      ],
-      "Metascore": "82",
-      "imdbRating": "7.9",
-      "imdbVotes": "46,330",
-      "imdbID": "tt0376968",
-      "Type": "movie",
-      "DVD": "29 Jun 2020",
-      "BoxOffice": "$504,256",
-      "Production": "N/A",
-      "Website": "N/A",
-      "Response": "True"
-    }
+    "Title": "The Return",
+    "Year": "2003",
+    "Rated": "Not Rated",
+    "Released": "25 Jun 2003",
+    "Runtime": "110 min",
+    "Genre": "Drama",
+    "Director": "Andrey Zvyagintsev",
+    "Writer": "Vladimir Moiseenko, Aleksandr Novototskiy-Vlasov",
+    "Actors": "Vladimir Garin, Ivan Dobronravov, Konstantin Lavronenko",
+    "Plot": "In the Russian wilderness, two brothers face a range of new, conflicting emotions when their father - a man they know only through a single photograph - resurfaces.",
+    "Language": "Russian",
+    "Country": "Russia",
+    "Awards": "34 wins & 20 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BODI1YTAzZmQtYjg5Ny00ODc1LTgxYTEtOWRlYmYzNzAwMDY5XkEyXkFqcGdeQXVyNzMzMjU5NDY@._V1_SX300.jpg",
+    "Ratings": [
+        {
+            "Source": "Internet Movie Database",
+            "Value": "7.9/10",
+            "_id": "647f42e6f1af4312047af7c1"
+        },
+        {
+            "Source": "Metacritic",
+            "Value": "82/100",
+            "_id": "647f42e6f1af4312047af7c2"
+        }
+    ],
+    "Metascore": "82",
+    "imdbRating": "7.9",
+    "imdbVotes": "46,330",
+    "imdbID": "tt0376968",
+    "Type": "movie",
+    "DVD": "29 Jun 2020",
+    "BoxOffice": "$504,256",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
   },
   {
     "id": 6,
@@ -262,50 +250,46 @@
     "movie_location_still": "https://2.bp.blogspot.com/-vL9gJjf3wKA/TwoUlojNMfI/AAAAAAAAAuE/1b2wC07nn0k/s1600/city+of+god+6+.jpg",
     "location_image": "https://rf4game.com/forum/uploads/monthly_2018_09/ladoga.jpg.9281bbdb56e006d49b2e72464c2d7320.jpg",
     "coordinates": [-22.9450, -43.3618],
-    "omdb_data": {
-      "_id": "647f42e7f1af4312047af7c7",
-      "Title": "City of God",
-      "Year": "2002",
-      "Rated": "R",
-      "Released": "13 Feb 2004",
-      "Runtime": "130 min",
-      "Genre": "Crime, Drama",
-      "Director": "Fernando Meirelles, Kátia Lund",
-      "Writer": "Paulo Lins, Bráulio Mantovani",
-      "Actors": "Alexandre Rodrigues, Leandro Firmino, Matheus Nachtergaele",
-      "Plot": "In the slums of Rio, two kids' paths diverge as one struggles to become a photographer and the other a kingpin.",
-      "Language": "Portuguese",
-      "Country": "Brazil, France, Germany",
-      "Awards": "Nominated for 4 Oscars. 74 wins & 50 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BOTMwYjc5ZmItYTFjZC00ZGQ3LTlkNTMtMjZiNTZlMWQzNzI5XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-      "Ratings": [
-          {
-              "Source": "Internet Movie Database",
-              "Value": "8.6/10",
-              "_id": "647f42e7f1af4312047af7c8"
-          },
-          {
-              "Source": "Rotten Tomatoes",
-              "Value": "91%",
-              "_id": "647f42e7f1af4312047af7c9"
-          },
-          {
-              "Source": "Metacritic",
-              "Value": "79/100",
-              "_id": "647f42e7f1af4312047af7ca"
-          }
-      ],
-      "Metascore": "79",
-      "imdbRating": "8.6",
-      "imdbVotes": "768,942",
-      "imdbID": "tt0317248",
-      "Type": "movie",
-      "DVD": "08 Jun 2004",
-      "BoxOffice": "$7,564,459",
-      "Production": "N/A",
-      "Website": "N/A",
-      "Response": "True"
-    }
+    "Year": "2002",
+    "Rated": "R",
+    "Released": "13 Feb 2004",
+    "Runtime": "130 min",
+    "Genre": "Crime, Drama",
+    "Director": "Fernando Meirelles, Kátia Lund",
+    "Writer": "Paulo Lins, Bráulio Mantovani",
+    "Actors": "Alexandre Rodrigues, Leandro Firmino, Matheus Nachtergaele",
+    "Plot": "In the slums of Rio, two kids' paths diverge as one struggles to become a photographer and the other a kingpin.",
+    "Language": "Portuguese",
+    "Country": "Brazil, France, Germany",
+    "Awards": "Nominated for 4 Oscars. 74 wins & 50 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BOTMwYjc5ZmItYTFjZC00ZGQ3LTlkNTMtMjZiNTZlMWQzNzI5XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+    "Ratings": [
+        {
+            "Source": "Internet Movie Database",
+            "Value": "8.6/10",
+            "_id": "647f42e7f1af4312047af7c8"
+        },
+        {
+            "Source": "Rotten Tomatoes",
+            "Value": "91%",
+            "_id": "647f42e7f1af4312047af7c9"
+        },
+        {
+            "Source": "Metacritic",
+            "Value": "79/100",
+            "_id": "647f42e7f1af4312047af7ca"
+        }
+    ],
+    "Metascore": "79",
+    "imdbRating": "8.6",
+    "imdbVotes": "768,942",
+    "imdbID": "tt0317248",
+    "Type": "movie",
+    "DVD": "08 Jun 2004",
+    "BoxOffice": "$7,564,459",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
   },
   {
     "id": 7,
@@ -315,39 +299,36 @@
     "movie_location_still": "https://assets.rbl.ms/21648286/origin.png",
     "location_image": "http://www.emedia.sn/IMG/jpg/whatsapp_image_2020-07-12_at_13.59.14.jpg",
     "coordinates": [14.7390, -17.3600],
-    "omdb_data": {
-      "Title": "L'homme atlantique",
-      "Year": "1981",
-      "Rated": "N/A",
-      "Released": "25 Nov 1981",
-      "Runtime": "45 min",
-      "Genre": "Drama",
-      "Director": "Marguerite Duras",
-      "Writer": "Marguerite Duras",
-      "Actors": "Yann Andréa, Marguerite Duras",
-      "Plot": "A man remembers, in the desert hall of an hotel facing the Atlantic ocean.",
-      "Language": "French",
-      "Country": "France",
-      "Awards": "N/A",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BYmM0NzhhNDgtNDgyMC00NzFhLWJmMjYtOWIyMWE1Nzc4YTg1XkEyXkFqcGdeQXVyMjg1MDYwNTI@._V1_SX300.jpg",
-      "Ratings": [
-          {
-              "Source": "Internet Movie Database",
-              "Value": "7.7/10",
-              "_id": "647f42e7f1af4312047af7d0"
-          }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "7.7",
-      "imdbVotes": "131",
-      "imdbID": "tt0258655",
-      "Type": "movie",
-      "DVD": "N/A",
-      "BoxOffice": "N/A",
-      "Production": "N/A",
-      "Website": "N/A",
-      "Response": "True"
-    }
+    "Year": "1981",
+    "Rated": "N/A",
+    "Released": "25 Nov 1981",
+    "Runtime": "45 min",
+    "Genre": "Drama",
+    "Director": "Marguerite Duras",
+    "Writer": "Marguerite Duras",
+    "Actors": "Yann Andréa, Marguerite Duras",
+    "Plot": "A man remembers, in the desert hall of an hotel facing the Atlantic ocean.",
+    "Language": "French",
+    "Country": "France",
+    "Awards": "N/A",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYmM0NzhhNDgtNDgyMC00NzFhLWJmMjYtOWIyMWE1Nzc4YTg1XkEyXkFqcGdeQXVyMjg1MDYwNTI@._V1_SX300.jpg",
+    "Ratings": [
+        {
+            "Source": "Internet Movie Database",
+            "Value": "7.7/10",
+            "_id": "647f42e7f1af4312047af7d0"
+        }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.7",
+    "imdbVotes": "131",
+    "imdbID": "tt0258655",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "N/A",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
   },
   {
     "id": 8,
@@ -357,49 +338,46 @@
     "movie_location_still": "https://film-grab.com/wp-content/uploads/photo-gallery/Rosetta_001.jpg?bwg=1602241740",
     "location_image": "http://www.emedia.sn/IMG/jpg/whatsapp_image_2020-07-12_at_13.59.14.jpg",
     "coordinates": [50.6054, 5.6198],
-    "omdb_data": {
-      "Title": "Rosetta",
-      "Year": "1999",
-      "Rated": "R",
-      "Released": "22 Sep 1999",
-      "Runtime": "95 min",
-      "Genre": "Drama",
-      "Director": "Jean-Pierre Dardenne, Luc Dardenne",
-      "Writer": "Jean-Pierre Dardenne, Luc Dardenne",
-      "Actors": "Émilie Dequenne, Fabrizio Rongione, Anne Yernaux",
-      "Plot": "Young and impulsive Rosetta lives with her alcoholic mother and, moved by despair, she will do anything to maintain a job.",
-      "Language": "French",
-      "Country": "France, Belgium",
-      "Awards": "10 wins & 7 nominations",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BZDIyYzg1N2MtNTExNC00ZmZiLTk1NTctODdiM2YyMDUwN2JhXkEyXkFqcGdeQXVyMTI3ODAyMzE2._V1_SX300.jpg",
-      "Ratings": [
-          {
-              "Source": "Internet Movie Database",
-              "Value": "7.4/10",
-              "_id": "647f42e7f1af4312047af7d6"
-          },
-          {
-              "Source": "Rotten Tomatoes",
-              "Value": "90%",
-              "_id": "647f42e7f1af4312047af7d7"
-          },
-          {
-              "Source": "Metacritic",
-              "Value": "76/100",
-              "_id": "647f42e7f1af4312047af7d8"
-          }
-      ],
-      "Metascore": "76",
-      "imdbRating": "7.4",
-      "imdbVotes": "14,923",
-      "imdbID": "tt0200071",
-      "Type": "movie",
-      "DVD": "14 Aug 2012",
-      "BoxOffice": "$266,665",
-      "Production": "N/A",
-      "Website": "N/A",
-      "Response": "True"
-    }
+    "Year": "1999",
+    "Rated": "R",
+    "Released": "22 Sep 1999",
+    "Runtime": "95 min",
+    "Genre": "Drama",
+    "Director": "Jean-Pierre Dardenne, Luc Dardenne",
+    "Writer": "Jean-Pierre Dardenne, Luc Dardenne",
+    "Actors": "Émilie Dequenne, Fabrizio Rongione, Anne Yernaux",
+    "Plot": "Young and impulsive Rosetta lives with her alcoholic mother and, moved by despair, she will do anything to maintain a job.",
+    "Language": "French",
+    "Country": "France, Belgium",
+    "Awards": "10 wins & 7 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZDIyYzg1N2MtNTExNC00ZmZiLTk1NTctODdiM2YyMDUwN2JhXkEyXkFqcGdeQXVyMTI3ODAyMzE2._V1_SX300.jpg",
+    "Ratings": [
+        {
+            "Source": "Internet Movie Database",
+            "Value": "7.4/10",
+            "_id": "647f42e7f1af4312047af7d6"
+        },
+        {
+            "Source": "Rotten Tomatoes",
+            "Value": "90%",
+            "_id": "647f42e7f1af4312047af7d7"
+        },
+        {
+            "Source": "Metacritic",
+            "Value": "76/100",
+            "_id": "647f42e7f1af4312047af7d8"
+        }
+    ],
+    "Metascore": "76",
+    "imdbRating": "7.4",
+    "imdbVotes": "14,923",
+    "imdbID": "tt0200071",
+    "Type": "movie",
+    "DVD": "14 Aug 2012",
+    "BoxOffice": "$266,665",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
   },
   {
     "id": 9,
@@ -409,8 +387,6 @@
     "movie_location_still": "https://zone-critique.com/wp-content/uploads/2022/06/beau-travail6-e1655753012953.png",
     "location_image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Djib_003.JPG",
     "coordinates": [11.7060, 42.4134],
-    "omdb_data": {
-      "Title": "Beau travail",
       "Year": "1999",
       "Rated": "Unrated",
       "Released": "03 May 2000",
@@ -451,7 +427,6 @@
       "Production": "N/A",
       "Website": "N/A",
       "Response": "True"
-    }
   },
   {
     "id": 10,
@@ -461,48 +436,45 @@
     "movie_location_still": "http://cronenbergmuseum.tiff.net/CNMCMS/appimages/image/locs/loc_6_a.jpg",
     "location_image": "http://cronenbergmuseum.tiff.net/CNMCMS/appimages/image/locs/loc_6_b.jpg",
     "coordinates": [43.6451, -79.4133],
-    "omdb_data": {
-      "Title": "Videodrome",
-      "Year": "1983",
-      "Rated": "R",
-      "Released": "04 Feb 1983",
-      "Runtime": "87 min",
-      "Genre": "Horror, Sci-Fi, Thriller",
-      "Director": "David Cronenberg",
-      "Writer": "David Cronenberg",
-      "Actors": "James Woods, Debbie Harry, Sonja Smits",
-      "Plot": "A programmer at a TV station that specializes in adult entertainment searches for the producers of a dangerous and bizarre broadcast.",
-      "Language": "English, Spanish, Japanese, French, Italian",
-      "Country": "Canada",
-      "Awards": "3 wins & 7 nominations",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNjYzNGQzMjQtZmFkZi00MDBiLWExODItNjExYjI3MTIzYzI0XkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_SX300.jpg",
-      "Ratings": [
-          {
-              "Source": "Internet Movie Database",
-              "Value": "7.2/10",
-              "_id": "647f42e8f1af4312047af7e6"
-          },
-          {
-              "Source": "Rotten Tomatoes",
-              "Value": "80%",
-              "_id": "647f42e8f1af4312047af7e7"
-          },
-          {
-              "Source": "Metacritic",
-              "Value": "60/100",
-              "_id": "647f42e8f1af4312047af7e8"
-          }
-      ],
-      "Metascore": "60",
-      "imdbRating": "7.2",
-      "imdbVotes": "97,487",
-      "imdbID": "tt0086541",
-      "Type": "movie",
-      "DVD": "31 Aug 2004",
-      "BoxOffice": "$2,120,439",
-      "Production": "N/A",
-      "Website": "N/A",
-      "Response": "True"
-    }
+    "Year": "1983",
+    "Rated": "R",
+    "Released": "04 Feb 1983",
+    "Runtime": "87 min",
+    "Genre": "Horror, Sci-Fi, Thriller",
+    "Director": "David Cronenberg",
+    "Writer": "David Cronenberg",
+    "Actors": "James Woods, Debbie Harry, Sonja Smits",
+    "Plot": "A programmer at a TV station that specializes in adult entertainment searches for the producers of a dangerous and bizarre broadcast.",
+    "Language": "English, Spanish, Japanese, French, Italian",
+    "Country": "Canada",
+    "Awards": "3 wins & 7 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNjYzNGQzMjQtZmFkZi00MDBiLWExODItNjExYjI3MTIzYzI0XkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_SX300.jpg",
+    "Ratings": [
+        {
+            "Source": "Internet Movie Database",
+            "Value": "7.2/10",
+            "_id": "647f42e8f1af4312047af7e6"
+        },
+        {
+            "Source": "Rotten Tomatoes",
+            "Value": "80%",
+            "_id": "647f42e8f1af4312047af7e7"
+        },
+        {
+            "Source": "Metacritic",
+            "Value": "60/100",
+            "_id": "647f42e8f1af4312047af7e8"
+        }
+    ],
+    "Metascore": "60",
+    "imdbRating": "7.2",
+    "imdbVotes": "97,487",
+    "imdbID": "tt0086541",
+    "Type": "movie",
+    "DVD": "31 Aug 2004",
+    "BoxOffice": "$2,120,439",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
   }
 ]
