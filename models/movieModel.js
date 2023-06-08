@@ -1,5 +1,44 @@
 import mongoose from 'mongoose';
 
+const MovieLocationSchema = mongoose.Schema(
+  {
+  id: Number,
+  title: String,
+  location: String,
+  scene_description: String,
+  movie_location_still: String,
+  location_image: String,
+  coordinates: [Number],
+  Year: String,
+  Rated: String,
+  Released: String,
+  Runtime: String,
+  Genre: String,
+  Director: String,
+  Writer: String,
+  Actors: String,
+  Plot: String,
+  Language: String,
+  Country: String,
+  Awards: String,
+  Poster: String,
+  Ratings: [{ Source: String, Value: String }],
+  Metascore: String,
+  imdbRating: String,
+  imdbVotes: String,
+  imdbID: String,
+  Type: String,
+  DVD: String,
+  BoxOffice: String,
+  Production: String,
+  Website: String,
+  Response: String,
+  }
+);
+
+/* const omdb_DB = mongoose.connection
+omdb_DB.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 const omdbSchema = mongoose.Schema({
     Title: String,
     Year: String,
@@ -26,37 +65,29 @@ const omdbSchema = mongoose.Schema({
     Production: String,
     Website: String,
     Response: String,
+    movie_location: {
+      type: mongoose.Types.ObjectId,
+      ref: 'MovieLocation'
+    } 
 });
-
-const OmdbMovie = mongoose.model('OmdbMovie', omdbSchema);
-
-const MovieSchema = mongoose.Schema({
-  id: Number,
-  title: String,
-  key_scene: String,
-  location_image: String,
-  coordinates: [Number],
-  omdbMovie: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'OmdbMovie'
-  }
-});
-
+ */
 // Define a pre-save middleware on the MovieSchema to automatically match and set the omdbMovie reference
-MovieSchema.pre('save', async function (next) {
-  const movieTitle = this.title;
+/* omdbSchema.pre('save', async function (next) {
+  const movieTitle = this.Title; */
 
   // Find the corresponding OmdbMovie by title
-  const omdbMovie = await OmdbMovie.findOne({ Title: movieTitle });
+  /* const movieLocation = await MovieLocation.findOne({ title: movieTitle }); */
 
-  if (omdbMovie) {
+ /*  if (movieLocation) { */
     // Set the omdbMovie reference in the Movie document
-    this.omdbMovie = omdbMovie._id;
+/*     this.movie_location = movieLocation._id;
   }
 
   next();
-});
+}); */
 
-const Movie = mongoose.model('Movie', MovieSchema);
+const MovieLocation = mongoose.model('MovieLocation', MovieLocationSchema);
 
-export { OmdbMovie, Movie };
+/* const OmdbMovie = mongoose.model('OmdbMovie', omdbSchema); */
+
+export { MovieLocation };

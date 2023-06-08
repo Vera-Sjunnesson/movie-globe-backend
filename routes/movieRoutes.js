@@ -34,6 +34,8 @@ movieRouter.get("/auth", async (req, res, next) => {
     };
 }, getAllMovies); // Why can't auth.js be used?
 
+/* movieRouter.get('/test', getTestMovies); */
+
 //Post movies
 movieRouter.post("/", postMovies);
 

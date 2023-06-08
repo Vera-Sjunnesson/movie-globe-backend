@@ -4,11 +4,10 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import movieRouter from './routes/movieRoutes';
 import userRouter from './routes/userRoutes';
-import { Movie } from './models/movieModel';
-import movieJson from './data/movies.json'
-import { movieFetch } from "./movieFetch";
-import { User } from "./models/userModel";
-/* import { getMovies } from './controllers/movieController' */
+/* import movieJson from './data/movies.json';
+import { movieFetch } from "./movieFetch"; */
+
+
 dotenv.config();
 
 const mongoUrl = process.env.MONGO_URL || 'mongodb://127.0.0.1/movie-globe'
@@ -28,17 +27,17 @@ app.use(cors());
 app.use(express.json());
 
 /* Resetting the db  // Runs with RESET_DB=true (from .env) */
-if (process.env.RESET_DB) {
+/* if (process.env.RESET_DB) {
   const resetDatabase = async () => {
-    await Movie.deleteMany();
+    await MovieLocation.deleteMany();
+    await OmdbMovie.deleteMany();
     movieJson.forEach(movie => {
-      const newMovie = new Movie(movie);
+      const newMovie = new MovieLocation(movie);
       newMovie.save();
     })
   };
   resetDatabase();
-  movieFetch()
-};
+}; */
 
 /********* GET REQUESTS **********/
 app.get("/", (req, res) => {
