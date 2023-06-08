@@ -1,18 +1,18 @@
-import { Movie } from '../models/movieModel'
+import { Movie } from '../models/movieModel';
 
 // desc: Get all movies
 // route: GET /movies
-// access: PRIVATE
-export const getAllMovies = async (req, res) => {
+// access: PUBLIC
+export const getFreeMovies = async (req, res) => {
   try {
     const movieList = await Movie.find();
   
       if (movieList.length) {
         res.status(200).json({
           success: true,
-          message: `Found ${movieList.length} movies`,
+          message: `First 5 movies are free`,
           body: {
-            movieList: movieList,
+            movieList: movieList.slice(0,5)
           },
         });
       } else {
@@ -29,7 +29,38 @@ export const getAllMovies = async (req, res) => {
         error: err.message
       });
     }
-}
+};
+
+// Desc: Get all authorized movies
+// route: GET /movies/auth
+// access: PRIVATE
+export const getAllMovies = async (req, res) => {
+  try {
+    const fullMovieList = await Movie.find();
+  
+      if (fullMovieList.length) {
+        res.status(200).json({
+          success: true,
+          message: `Found ${fullMovieList.length} member exclusive movies`,
+          body: {
+            movieList: fullMovieList,
+          },
+        });
+      } else {
+        res.status(404).json({
+          success: false,
+          message: 'Failed to fetch movies. Log in for full access.',
+          body: {},
+        });
+      }
+    } catch (err) {
+      res.status(500).json({
+        success: false,
+        message: 'Failed to fetch movies',
+        error: err.message
+      });
+    }
+};
 
 // desc: Set movies
 // route: POST /movies
@@ -141,4 +172,4 @@ export const deleteMovie = async (req, res) => {
       error: err.message
     });
   }
-}
+};
