@@ -16,7 +16,7 @@ export const getFreeMovies = async (req, res) => {
           success: true,
           message: `First 5 movies are free`,
           body: {
-            movieList: movieList.slice(0,5)
+            movieList: movieList.slice(0,10)
           },
         });
       } else {
