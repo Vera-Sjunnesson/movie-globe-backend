@@ -33,7 +33,10 @@ const MovieLocationSchema = mongoose.Schema(
   Production: String,
   Website: String,
   Response: String,
-  LikeBy: [String]
+  LikedBy: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }]
   }
 );
 
