@@ -201,7 +201,7 @@ export const getMovie = async (req, res) => {
   }
 }
 
-// desc: Save a movie
+
 // route: PUT /movies/:id
 // access: PRIVATE
 export const saveMovie = async (req, res) => {
@@ -223,7 +223,7 @@ export const saveMovie = async (req, res) => {
     const movieToUpdate = await MovieLocation.findById(id);
 
     if (movieToUpdate) {
-      movieToUpdate.LikedBy = user._id;
+      movieToUpdate.LikedBy.push(user._id);
       const updatedMovie = await movieToUpdate.save();
 
       res.status(200).json({
