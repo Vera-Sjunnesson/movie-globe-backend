@@ -221,7 +221,15 @@ export const saveMovie = async (req, res) => {
     }
 
     const movieToUpdate = await MovieLocation.findById(id);
+    const existingId = movieToUpdate.LikedBy.find(userId => userId.equals(user._id));
 
+    if (existingId) {
+      res.status(200).json({
+        success: false,
+        message: 'Movie is already saved',
+        body: {},
+      });
+    } else {
     if (movieToUpdate) {
       movieToUpdate.LikedBy.push(user._id);
       const updatedMovie = await movieToUpdate.save();
@@ -239,7 +247,7 @@ export const saveMovie = async (req, res) => {
         message: 'Failed to update movie',
         body: {},
       });
-    }
+    }}
   } catch (err) {
     res.status(500).json({
       success: false,
