@@ -1,13 +1,13 @@
-import express from 'express';
+/* import express from 'express';
 import { deleteMovie, getMovie, saveMovie } from '../controllers/movieController';
 import { User } from '../models/userModel';
 
-const memberRouter = express.Router();
+const memberRouter = express.Router(); */
 
 //// Get all authorized movies for members ////
 
 //authentification function
-const authentification = async (req, res, next) => {
+/* const authentification = async (req, res, next) => {
     const accessToken = req.header('Authorization');
     try {
       const user = await User.findOne({accessToken});
@@ -28,18 +28,18 @@ const authentification = async (req, res, next) => {
         response: error
       });
     };
-}
+} */
 /* memberRouter.route("/")
     .all(authentification)
     .get(getAllMovies)
     .post(postNewMovie) */
 
 //Single movie requests (with authentification)
-memberRouter.route("/:id")
+/* memberRouter.route("/:id")
   .all(authentification)
   .get(getMovie)
   .put(saveMovie)
-  .delete(deleteMovie);
+  .delete(deleteMovie); */
 
 /*   //Get a single movie
 memberRouter.get("/:id", authentification, getMovie);
@@ -50,4 +50,4 @@ memberRouter.put("/:id", authentification, updateMovie);
 //delete a movie
 memberRouter.delete("/:id", authentification, deleteMovie); */
 
-export default memberRouter;
+/* export default memberRouter; */

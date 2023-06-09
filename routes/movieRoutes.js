@@ -1,25 +1,42 @@
 import express from 'express';
 const movieRouter = express.Router();
-import { getFreeMovies, postMovies, getMovie, updateMovie, deleteMovie } from '../controllers/movieController';
-
+import { getFreeMovies, postMovies,/* , getMovie, updateMovie, */ deleteMovie, saveMovie } from '../controllers/movieController';
+import { User } from '../models/userModel';
 // See controller-functions for actual GET/POST-request
 // For example getAllMovies in movieController
+
+const authentification = async (req, res, next) => {
+    const accessToken = req.header('Authorization');
+    try {
+      const user = await User.findOne({accessToken});
+      if (user) {
+        req.user = user;
+        next();
+      } else {
+        res.status(400).json({
+          success: false,
+          response: {
+            message: "Please log in",
+          }
+        });
+      }
+    } catch (error) {
+      res.status(500).json({
+        success: false,
+        response: error
+      });
+    };
+}
 
 //Get all movies
 movieRouter.get("/", getFreeMovies);
 
-/* movieRouter.get('/test', getTestMovies); */
-
 //Post movies
 movieRouter.post("/", postMovies);
 
-//Get a single movie
-movieRouter.get("/:id", getMovie);
-
-//Update a movie
-movieRouter.put("/:id", updateMovie);
-
-//delete a movie
-movieRouter.delete("/:id", deleteMovie);
+movieRouter.route("/:id")
+  .all(authentification)
+  .put(saveMovie)
+  .delete(deleteMovie);
 
 export default movieRouter;

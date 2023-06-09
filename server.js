@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import movieRouter from './routes/movieRoutes';
 import userRouter from './routes/userRoutes';
-import memberRouter from "./routes/memberRoutes";
+/* import memberRouter from "./routes/memberRoutes"; */
 /* import movieJson from './data/movies.json';
 import { movieFetch } from "./movieFetch"; */
 
@@ -60,7 +60,7 @@ app.use("/movies", movieRouter)
 app.use("/user", userRouter);
 
 // Member endpoints
-app.use("/savedmovies", memberRouter)
+/* app.use("/savedmovies", memberRouter) */
 
 // Start the server
 app.listen(port, () => {
