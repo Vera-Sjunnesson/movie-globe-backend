@@ -16,7 +16,7 @@ export const getFreeMovies = async (req, res) => {
           success: true,
           message: `First 5 movies are free`,
           body: {
-            movieList: movieList.slice(0,5)
+            movieList: movieList
           },
         });
       } else {
@@ -276,6 +276,53 @@ export const getAllSavedMovies = async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Failed to list of saved movies',
+      error: err.message
+    });
+  }
+};
+
+// desc: Delete a movie
+// route: DELETE /movies/:id
+// access: PRIVATE
+export const deleteSavedMovie = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const accessToken = req.headers.authorization;
+    const user = await User.findOne({ accessToken });
+
+    if (!user) {
+      return res.status(401).json({
+        success: false,
+        response: {
+          message: "Invalid access token",
+        }
+      });
+    }
+
+    const movieToUpdate = await MovieLocation.findById(id);
+
+    if (movieToUpdate) {
+      movieToUpdate.LikedBy.splice(user._id);
+      const updatedMovie = await movieToUpdate.save();
+
+      res.status(201).json({
+        success: true,
+        message: `Deleted ${updatedMovie.title}`,
+        body: {
+          updatedMovie: updatedMovie
+        },
+      });
+    } else {
+      res.status(404).json({
+        success: false,
+        message: 'Failed to delete movie',
+        body: {},
+      });
+    }
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: 'Failed to delete movie',
       error: err.message
     });
   }
