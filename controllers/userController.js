@@ -68,7 +68,7 @@ export const registerUser = async (req, res) => {
             response: {
               username: user.username,
               id: user._id,
-              accessToken: user.accessToken,
+              accessToken:  user.accessToken,
               message: "User logged in"
             }
           })

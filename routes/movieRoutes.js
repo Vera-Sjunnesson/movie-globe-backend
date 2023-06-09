@@ -1,7 +1,6 @@
 import express from 'express';
 const movieRouter = express.Router();
-import { User } from '../models/userModel';
-import { getFreeMovies, postMovies, getMovie, updateMovie, deleteMovie, getAllMovies } from '../controllers/movieController';
+import { getFreeMovies, postMovies, getMovie, updateMovie, deleteMovie } from '../controllers/movieController';
 
 // See controller-functions for actual GET/POST-request
 // For example getAllMovies in movieController

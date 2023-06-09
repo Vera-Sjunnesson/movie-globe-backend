@@ -1,6 +1,6 @@
 import { Movie } from '../models/movieModel';
 /* import axios from 'axios'; */
-
+import { User } from '../models/userModel';
 import { MovieLocation } from '../models/movieModel'
 /* import { OmdbMovie } from '../models/movieModel'; */
 
@@ -14,9 +14,9 @@ export const getFreeMovies = async (req, res) => {
       if (movieList.length) {
         res.status(200).json({
           success: true,
-          message: `First 10 movies are free`,
+          message: `First 5 movies are free`,
           body: {
-            movieList: movieList.slice(0,10)
+            movieList: movieList.slice(0,5)
           },
         });
       } else {
@@ -40,7 +40,7 @@ export const getFreeMovies = async (req, res) => {
 // access: PRIVATE
 export const getAllMovies = async (req, res) => {
   try {
-    const fullMovieList = await MovieLocation.find();
+    const fullMovieList = await Movie.find();
   
       if (fullMovieList.length) {
         res.status(200).json({
@@ -153,10 +153,9 @@ export const getAllMovies = async (req, res) => {
 // access: PRIVATE
 export const postMovies = async (req, res) => {
   try {
-    /* const { title, location, movie_location_still } = req.body; */
-    /* const movie = new MovieLocation({ title, location, movie_location_still }) */
-    const newMovie = new MovieLocation(req.body);
-    const savedMovie = await newMovie.save();
+    const { title, location, movie_location_still } = req.body;
+    const movie = new MovieLocation({ title, location, movie_location_still })
+    const savedMovie = await movie.save()
 
       res.status(201).json({
       success: true,
@@ -181,7 +180,7 @@ export const getMovie = async (req, res) => {
     if (singleMovie) {
       res.status(200).json({
         success: true,
-        message: `Found the movie: ${singleMovie.title}`,
+        message: `Found movie ${singleMovie}`,
         body: {
           singleMovie: singleMovie,
         },
@@ -202,32 +201,46 @@ export const getMovie = async (req, res) => {
   }
 }
 
-// desc: Post new movie
-// route: POST /savedmovies/:id
+// desc: Save a movie
+// route: PUT /movies/:id
 // access: PRIVATE
-export const postNewMovie = async (req, res) => {
+export const saveMovie = async (req, res) => {
+  const { id } = req.params;
   try {
-    const singleMovie = await MovieLocation.findById(req.params.id);
-    
-    if (!singleMovie) {
-      const newMovie = new MovieLocation(req.body);
-      const savedMovie = await newMovie.save();
+    const accessToken = req.headers.authorization;
+
+    const user = await User.findOne({ accessToken });
+
+    if (!user) {
+      return res.status(401).json({
+        success: false,
+        response: {
+          message: "Invalid access token",
+        }
+      });
+    }
+
+    const movieToUpdate = await MovieLocation.findById(id);
+
+    if (movieToUpdate) {
+      movieToUpdate.LikedBy = user._id;
+      const updatedMovie = await movieToUpdate.save();
 
       res.status(200).json({
         success: true,
-        message: `Added new movie: ${newMovie.title}`,
+        message: `Updated ${updatedMovie.title}`,
         body: {
-          NewMovie: savedMovie
+          updatedMovie: updatedMovie
         },
       });
     } else {
       res.status(404).json({
-          success: false,
-          message: 'Failed to update movie',
-          body: {},
+        success: false,
+        message: 'Failed to update movie',
+        body: {},
       });
     }
-  } catch(err) {
+  } catch (err) {
     res.status(500).json({
       success: false,
       message: 'Failed to update movie',
@@ -235,6 +248,8 @@ export const postNewMovie = async (req, res) => {
     });
   }
 };
+
+
 
 // desc: Update a movie
 // route: PUT /movies/:id
@@ -253,7 +268,7 @@ export const updateMovie = async (req, res) => {
 
       res.status(200).json({
         success: true,
-        message: `Updated movie ${singleMovie.title}`,
+        message: `Updated movie ${singleMovie}`,
         body: {
           updatedMovie: updatedMovie,
         },

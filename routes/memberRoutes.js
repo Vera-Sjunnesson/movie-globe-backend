@@ -1,5 +1,5 @@
 import express from 'express';
-import { deleteMovie, getAllMovies, getMovie, updateMovie, postNewMovie } from '../controllers/movieController';
+import { deleteMovie, getMovie, saveMovie } from '../controllers/movieController';
 import { User } from '../models/userModel';
 
 const memberRouter = express.Router();
@@ -29,16 +29,16 @@ const authentification = async (req, res, next) => {
       });
     };
 }
-memberRouter.route("/")
+/* memberRouter.route("/")
     .all(authentification)
     .get(getAllMovies)
-    .post(postNewMovie)
+    .post(postNewMovie) */
 
 //Single movie requests (with authentification)
 memberRouter.route("/:id")
   .all(authentification)
   .get(getMovie)
-  .put(updateMovie)
+  .put(saveMovie)
   .delete(deleteMovie);
 
 /*   //Get a single movie
