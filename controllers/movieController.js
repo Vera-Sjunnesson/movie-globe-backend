@@ -226,7 +226,7 @@ export const saveMovie = async (req, res) => {
       movieToUpdate.LikedBy.push(user._id);
       const updatedMovie = await movieToUpdate.save();
 
-      res.status(200).json({
+      res.status(201).json({
         success: true,
         message: `Updated ${updatedMovie.title}`,
         body: {
@@ -244,6 +244,38 @@ export const saveMovie = async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Failed to update movie',
+      error: err.message
+    });
+  }
+};
+
+// route: PUT /movies/:id
+// access: PRIVATE
+export const getAllSavedMovies = async (req, res) => {
+  try {
+    const accessToken = req.headers.authorization;
+    const user = await User.findOne({ accessToken });
+    const savedMovies = await MovieLocation.find({ LikedBy: [user._id]})
+
+    if (savedMovies) {
+      res.status(200).json({
+        success: true,
+        message: `Movies saved by ${user.username}`,
+        body: {
+          savedMovies: savedMovies
+        },
+      });
+    } else {
+      res.status(404).json({
+        success: false,
+        message: 'Failed to list of saved movies',
+        body: {},
+      });
+    }
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: 'Failed to list of saved movies',
       error: err.message
     });
   }

@@ -1,6 +1,6 @@
 import express from 'express';
 const movieRouter = express.Router();
-import { getFreeMovies, postMovies,/* , getMovie, updateMovie, */ deleteMovie, saveMovie } from '../controllers/movieController';
+import { getFreeMovies, postMovies,/* , getMovie, updateMovie, */ deleteMovie, saveMovie, getAllSavedMovies } from '../controllers/movieController';
 import { User } from '../models/userModel';
 // See controller-functions for actual GET/POST-request
 // For example getAllMovies in movieController
@@ -38,5 +38,9 @@ movieRouter.route("/:id")
   .all(authentification)
   .put(saveMovie)
   .delete(deleteMovie);
+
+  movieRouter.route("/savedmovies")
+  .all(authentification)
+  .get(getAllSavedMovies)
 
 export default movieRouter;
