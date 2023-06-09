@@ -249,13 +249,13 @@ export const saveMovie = async (req, res) => {
   }
 };
 
-// route: PUT /movies/:id
+// route: GET /savedmovies
 // access: PRIVATE
 export const getAllSavedMovies = async (req, res) => {
   try {
     const accessToken = req.headers.authorization;
-    const user = await User.findOne({ accessToken });
-    const savedMovies = await MovieLocation.find({ LikedBy: [user._id]})
+    const user = await User.findOne({ accessToken: accessToken });
+    const savedMovies = await MovieLocation.find({ LikedBy: { $in: [user._id] } })
 
     if (savedMovies) {
       res.status(200).json({
