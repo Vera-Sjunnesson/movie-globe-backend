@@ -9,31 +9,6 @@ import { getFreeMovies, postMovies, getMovie, updateMovie, deleteMovie, getAllMo
 //Get all movies
 movieRouter.get("/", getFreeMovies);
 
-// Get all authorized movies
-movieRouter.get("/auth", async (req, res, next) => {
-    const accessToken = req.header('Authorization');
-    try {
-      const user = await User.findOne({accessToken});
-      if (user) {
-        console.log('user exists');
-        req.user = user;
-        next();
-      } else {
-        res.status(400).json({
-          success: false,
-          response: {
-            message: "Please log in",
-          }
-        });
-      }
-    } catch (error) {
-      res.status(500).json({
-        success: false,
-        response: error
-      });
-    };
-}, getAllMovies); // Why can't auth.js be used?
-
 /* movieRouter.get('/test', getTestMovies); */
 
 //Post movies

@@ -1,12 +1,13 @@
 /* import express from 'express';
-import TestMovie from '../models/testModel';
 import { MovieLocation } from '../models/movieModel';
+import localMovieData from '../data/movielocations.json' */
 
-
-export const getTestMovies = async (req, res) => {
-    fetch(MovieLocation)
-    .then((json) => {
-        console.log(json);
-        res.status(200).json(json);
+// Populate database
+/* export const populateDB = async (req, res) => {
+    localMovieData.forEach(movie => {
+        const newMovie = new MovieLocation(movie);
+        newMovie.save();
     })
-} */
+};
+
+populateDB(); */

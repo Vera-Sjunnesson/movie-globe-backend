@@ -14,7 +14,7 @@ export const getFreeMovies = async (req, res) => {
       if (movieList.length) {
         res.status(200).json({
           success: true,
-          message: `First 5 movies are free`,
+          message: `First 10 movies are free`,
           body: {
             movieList: movieList.slice(0,10)
           },
@@ -153,9 +153,10 @@ export const getAllMovies = async (req, res) => {
 // access: PRIVATE
 export const postMovies = async (req, res) => {
   try {
-    const { title, location, movie_location_still } = req.body;
-    const movie = new MovieLocation({ title, location, movie_location_still })
-    const savedMovie = await movie.save()
+    /* const { title, location, movie_location_still } = req.body; */
+    /* const movie = new MovieLocation({ title, location, movie_location_still }) */
+    const newMovie = new MovieLocation(req.body);
+    const savedMovie = await newMovie.save();
 
       res.status(201).json({
       success: true,
@@ -180,7 +181,7 @@ export const getMovie = async (req, res) => {
     if (singleMovie) {
       res.status(200).json({
         success: true,
-        message: `Found movie ${singleMovie}`,
+        message: `Found the movie: ${singleMovie.title}`,
         body: {
           singleMovie: singleMovie,
         },
@@ -201,6 +202,40 @@ export const getMovie = async (req, res) => {
   }
 }
 
+// desc: Post new movie
+// route: POST /savedmovies/:id
+// access: PRIVATE
+export const postNewMovie = async (req, res) => {
+  try {
+    const singleMovie = await MovieLocation.findById(req.params.id);
+    
+    if (!singleMovie) {
+      const newMovie = new MovieLocation(req.body);
+      const savedMovie = await newMovie.save();
+
+      res.status(200).json({
+        success: true,
+        message: `Added new movie: ${newMovie.title}`,
+        body: {
+          NewMovie: savedMovie
+        },
+      });
+    } else {
+      res.status(404).json({
+          success: false,
+          message: 'Failed to update movie',
+          body: {},
+      });
+    }
+  } catch(err) {
+    res.status(500).json({
+      success: false,
+      message: 'Failed to update movie',
+      error: err.message
+    });
+  }
+};
+
 // desc: Update a movie
 // route: PUT /movies/:id
 // access: PRIVATE
@@ -218,7 +253,7 @@ export const updateMovie = async (req, res) => {
 
       res.status(200).json({
         success: true,
-        message: `Updated movie ${singleMovie}`,
+        message: `Updated movie ${singleMovie.title}`,
         body: {
           updatedMovie: updatedMovie,
         },
