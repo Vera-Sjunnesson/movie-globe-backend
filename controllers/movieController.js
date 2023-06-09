@@ -302,7 +302,7 @@ export const deleteSavedMovie = async (req, res) => {
     const movieToUpdate = await MovieLocation.findById(id);
 
     if (movieToUpdate) {
-      movieToUpdate.LikedBy.splice(user._id);
+      movieToUpdate.LikedBy = movieToUpdate.LikedBy.filter(userId => userId !== user._id);
       const updatedMovie = await movieToUpdate.save();
 
       res.status(201).json({
