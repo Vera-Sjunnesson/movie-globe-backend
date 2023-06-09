@@ -40,7 +40,7 @@ export const getFreeMovies = async (req, res) => {
 // access: PRIVATE
 export const getAllMovies = async (req, res) => {
   try {
-    const fullMovieList = await Movie.find();
+    const fullMovieList = await MovieLocation.find();
   
       if (fullMovieList.length) {
         res.status(200).json({

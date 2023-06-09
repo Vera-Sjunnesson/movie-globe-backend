@@ -1,1 +1,0 @@
-// copy register controller
