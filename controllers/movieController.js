@@ -300,7 +300,7 @@ export const deleteSavedMovie = async (req, res) => {
 
     const user = await User.findOne({ accessToken });
 
-    const userId = mongoose.Types.ObjectId(user._id);
+    const userId = new mongoose.Types.ObjectId(user._id);
 
     if (!userId) {
       return res.status(401).json({
