@@ -308,8 +308,7 @@ export const deleteSavedMovie = async (req, res) => {
         }
       });
     }
-
-    const userId = user._id.toString();
+    
     const movieToUpdate = await MovieLocation.findById(id);
 
     if (movieToUpdate) {
