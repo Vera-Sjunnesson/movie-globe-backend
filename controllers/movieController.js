@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import { Movie } from '../models/movieModel';
 /* import axios from 'axios'; */
 import { User } from '../models/userModel';
