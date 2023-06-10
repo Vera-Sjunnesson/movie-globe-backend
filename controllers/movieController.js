@@ -296,9 +296,12 @@ export const deleteSavedMovie = async (req, res) => {
   const { id } = req.params;
   try {
     const accessToken = req.headers.authorization;
+
     const user = await User.findOne({ accessToken });
 
-    if (!user) {
+    const userId = mongoose.Types.ObjectId(user._id);
+
+    if (!userId) {
       return res.status(401).json({
         success: false,
         response: {
@@ -310,7 +313,7 @@ export const deleteSavedMovie = async (req, res) => {
     const movieToUpdate = await MovieLocation.findById(id);
 
     if (movieToUpdate) {
-      movieToUpdate.LikedBy = movieToUpdate.LikedBy.filter(userId => userId !== user._id);
+      movieToUpdate.LikedBy = movieToUpdate.LikedBy.filter(userId => userId.toString() !== user._id.toString());
       const updatedMovie = await movieToUpdate.save();
 
       res.status(201).json({
