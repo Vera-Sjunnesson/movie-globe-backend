@@ -7,7 +7,7 @@ import { MovieLocation } from '../models/movieModel'
 // access: PUBLIC
 export const getFreeMovies = async (req, res) => {
   try {
-    const movieList = await MovieLocation.find({}).limit(10)
+    const movieList = await MovieLocation.find({}).limit(5)
   
       if (movieList.length) {
         res.status(200).json({

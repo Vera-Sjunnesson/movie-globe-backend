@@ -27,13 +27,13 @@ const authentification = async (req, res, next) => {
 }
 
 //Get all public movies - Public
-movieRouter.get("/", getFreeMovies);
+movieRouter.get("/start", getFreeMovies);
+
+//Get all private movies - Private
+movieRouter.delete("/", authentification, getAllMovies);
 
 //Post movies - Private
 movieRouter.post("/", authentification, postMovies);
-
-//Get all private movies - Private
-movieRouter.delete("/auth", authentification, getAllMovies);
 
 // Save and delete saved movies - Private
 movieRouter.route("/:id")
