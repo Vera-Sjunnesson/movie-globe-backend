@@ -1,9 +1,7 @@
 import express from 'express';
 const movieRouter = express.Router();
-import { getFreeMovies, postMovies,/* , getMovie, updateMovie, */ /* deleteMovie, */ saveMovie, getAllSavedMovies, deleteSavedMovie } from '../controllers/movieController';
+import { getFreeMovies, getAllMovies, postMovies, saveMovie, getAllSavedMovies, deleteSavedMovie } from '../controllers/movieController';
 import { User } from '../models/userModel';
-// See controller-functions for actual GET/POST-request
-// For example getAllMovies in movieController
 
 const authentification = async (req, res, next) => {
     const accessToken = req.header('Authorization');
@@ -28,18 +26,23 @@ const authentification = async (req, res, next) => {
     };
 }
 
-//Get all movies
+//Get all public movies - Public
 movieRouter.get("/", getFreeMovies);
 
-//Post movies
-movieRouter.post("/", postMovies);
+//Post movies - Private
+movieRouter.post("/", authentification, postMovies);
 
+//Get all private movies - Private
+movieRouter.delete("/auth", authentification, getAllMovies);
+
+// Save and delete saved movies - Private
 movieRouter.route("/:id")
   .all(authentification)
   .put(saveMovie)
   .delete(deleteSavedMovie);
 
-  movieRouter.route("/savedmovies")
+// get all saved movies - Private
+movieRouter.route("/savedmovies") 
   .all(authentification)
   .get(getAllSavedMovies)
 

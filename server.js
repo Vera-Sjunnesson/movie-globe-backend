@@ -5,9 +5,6 @@ import dotenv from 'dotenv';
 import movieRouter from './routes/movieRoutes';
 import userRouter from './routes/userRoutes';
 /* import memberRouter from "./routes/memberRoutes"; */
-/* import movieJson from './data/movies.json';
-import { movieFetch } from "./movieFetch"; */
-
 
 dotenv.config();
 
@@ -26,19 +23,6 @@ const listEndPoints = require('express-list-endpoints');
 /* Middlewares */
 app.use(cors());
 app.use(express.json());
-
-/* Resetting the db  // Runs with RESET_DB=true (from .env) */
-/* if (process.env.RESET_DB) {
-  const resetDatabase = async () => {
-    await MovieLocation.deleteMany();
-    await OmdbMovie.deleteMany();
-    movieJson.forEach(movie => {
-      const newMovie = new MovieLocation(movie);
-      newMovie.save();
-    })
-  };
-  resetDatabase();
-}; */
 
 /********* GET REQUESTS **********/
 app.get("/", (req, res) => {
