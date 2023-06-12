@@ -30,7 +30,7 @@ const authentification = async (req, res, next) => {
 movieRouter.get("/start", getFreeMovies);
 
 //Get all private movies - Private
-movieRouter.delete("/", authentification, getAllMovies);
+movieRouter.get("/", authentification, getAllMovies);
 
 //Post movies - Private
 movieRouter.post("/", authentification, postMovies);
