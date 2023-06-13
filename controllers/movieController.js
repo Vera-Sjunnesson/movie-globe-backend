@@ -69,8 +69,8 @@ export const getAllMovies = async (req, res) => {
 // access: PRIVATE
 export const postMovies = async (req, res) => {
   try {
-    const { title, location, movie_location_still } = req.body;
-    const movie = new MovieLocation({ title, location, movie_location_still })
+    const newMovieObject = req.body;
+    const movie = new MovieLocation(newMovieObject)
     const savedMovie = await movie.save()
 
       res.status(201).json({
