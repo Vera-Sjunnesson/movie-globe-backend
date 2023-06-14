@@ -118,6 +118,32 @@ export const getMovie = async (req, res) => {
 }
 
 
+export const addComment = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { userName, message } = req.body;
+    const accessToken = req.headers.authorization;
+    const user = await User.findOne({accessToken: accessToken});
+    const movieToUpdate = await MovieLocation.findById(id);
+
+    const newComment = await new MovieLocation({
+      message: message, 
+      userName: user.userName
+    }).save();
+    res.status(201).json({
+      success: true, 
+      response: newComment
+    })
+  } catch (e) {
+    res.status(500).json({
+      success: false, 
+      response: e, 
+      message: "nope get out"
+    });
+  }
+}
+
+
 // route: PUT /movies/:id
 // access: PRIVATE
 export const saveMovie = async (req, res) => {
