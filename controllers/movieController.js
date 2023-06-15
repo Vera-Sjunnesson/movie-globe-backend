@@ -117,33 +117,59 @@ export const getMovie = async (req, res) => {
   }
 }
 
-
+// desc: Update a movie
+// route: PUT /:id/addcomment
+// access: PRIVATE
 export const addComment = async (req, res) => {
+  const { id } = req.params;
   try {
-    const { id } = req.params;
-    const { userName, message } = req.body;
     const accessToken = req.headers.authorization;
-    const user = await User.findOne({accessToken: accessToken});
-    const movieToUpdate = await MovieLocation.findById(id);
+    const user = await User.findOne({ accessToken });
 
-    const newComment = await new MovieLocation({
-      message: message, 
-      userName: user.userName
-    }).save();
+    if (!user) {
+      return res.status(401).json({
+        success: false,
+        response: {
+          message: "Invalid access token",
+        }
+      });
+    }
+    const { message, userName } = req.body;
+    const movieToUpdate = await MovieLocation.findById(id);
+    if (movieToUpdate) {
+    
+      const newComment = {
+        userName: userName || user.username,
+        message: message,
+      };
+      
+      movieToUpdate.Comments.push(newComment);
+      await movieToUpdate.save();
+
     res.status(201).json({
-      success: true, 
-      response: newComment
-    })
-  } catch (e) {
-    res.status(500).json({
-      success: false, 
-      response: e, 
-      message: "nope get out"
+      success: true,
+      message: `Updated ${movieToUpdate.title}`,
+      body: {
+        newComment: newComment
+      },
+    });
+  } else {
+    res.status(404).json({
+      success: false,
+      message: 'Failed to update movie',
+      body: {},
     });
   }
+} catch (err) {
+  res.status(500).json({
+    success: false,
+    message: 'Failed to update movie',
+    error: err.message
+  });
+}
 }
 
-
+// desc: Update a movie
 // route: PUT /movies/:id
 // access: PRIVATE
 export const saveMovie = async (req, res) => {
@@ -279,8 +305,6 @@ export const deleteSavedMovie = async (req, res) => {
     });
   }
 };
-
-
 
 // desc: Update a movie
 // route: PUT /movies/:id/update

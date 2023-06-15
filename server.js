@@ -4,7 +4,6 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import movieRouter from './routes/movieRoutes';
 import userRouter from './routes/userRoutes';
-/* import memberRouter from "./routes/memberRoutes"; */
 
 dotenv.config();
 
@@ -19,12 +18,10 @@ const port = process.env.PORT || 8080;
 const app = express();
 const listEndPoints = require('express-list-endpoints');
 
-
 /* Middlewares */
 app.use(cors());
 app.use(express.json());
 
-/********* GET REQUESTS **********/
 app.get("/", (req, res) => {
   const message = "Welcome to the MovieGlobe API"
   const endpoints = (listEndPoints(app))
@@ -43,37 +40,7 @@ app.use("/movies", movieRouter)
 // Register or login user
 app.use("/user", userRouter);
 
-// Member endpoints
-/* app.use("/savedmovies", memberRouter) */
-
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
-
-//ENDPOINTS accessed WITHOUT accessToken:
-
-//User model:
-//("/register") - DONE!
-//("/login") - DONE!
-
-//Movies model:
-//app.get("/movies" - version for landing page with fewer movies - and a few query values/filters, such as genre
-
-//ENDPOINTS accessed WITH accessToken:
-
-//Movies model:
-//app.get("/movies" - version with more movies by default  - and a lot of query values/filters
-//app.post("/movies" - User can post movies with accessToken
-//app.get("/movies/:id" - get one specific movies
-//app.get("/movies/:id/save" - User can save a movie
-//app.post("/movies/:createcollection" - User can create collection
-//app.get("/movies/collections" - get user's collections
-//app.get("/movies/collections/movies" - get movies in collection
-//Skriv den här ser inte .env:
-//Comments model:
-//app.post("/comments" - User can post comment on movies
-//app.get("/comments" - Get user comments
-
-//Review model:
-//app.post("/reviews" - User can review movies

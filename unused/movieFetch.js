@@ -1,4 +1,4 @@
-import { OmdbMovie } from './models/movieModel';
+import { OmdbMovie } from '../models/movieModel';
 
 export const movieFetch = async () => {
   const titles = ['Taste%20of%20Cherry', 'Babyteeth', 'What%20Time%20Is%20It%20There?', 'Amores%20Perros', 'The%20Return', 'City%20of%20God', 'Atlantique', 'Rosetta', 'Beau%20Travail', 'Videodrome'];
