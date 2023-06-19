@@ -6,7 +6,7 @@ const MovieLocationSchema = mongoose.Schema(
   title: String,
   location: String,
   scene_description: String,
-  movie_location_still: Buffer,
+  movie_location_still: String,
   location_image: String,
   coordinates: [Number],
   Year: String,

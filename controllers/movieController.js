@@ -64,42 +64,28 @@ export const getAllMovies = async (req, res) => {
     }
 };
 
-/// desc: post a movie
+// desc: post a movie
 // route: POST /movies
 // access: PRIVATE
 export const postMovies = async (req, res) => {
   try {
     const newMovieObject = req.body;
+    const movie = new MovieLocation(newMovieObject)
+    const savedMovie = await movie.save()
 
-    // Check if the movieLocationStill file is included in the request
-    if (req.file) {
-      // Read the file data from the disk
-      const movieLocationStillData = fs.readFileSync(req.file.path);
-
-      // Assign the file data as a Buffer to the movie object property
-      newMovieObject.movie_location_still = movieLocationStillData;
-
-      // Remove the temporary file from the disk
-      fs.unlinkSync(req.file.path);
-    }
-
-    const movie = new MovieLocation(newMovieObject);
-    const savedMovie = await movie.save();
-
-    res.status(201).json({
+      res.status(201).json({
       success: true,
       response: savedMovie,
-      message: "Movie created successfully",
+      message: "Movie created successfully"
     });
   } catch (err) {
     res.status(400).json({
       success: false,
-      message: "Failed to fetch movies",
-      error: err.message,
+      message: 'Failed to fetch movies',
+      error: err.message
     });
   }
-};
-
+}
 
 // desc: Get a movie
 // route: GET /movies/:id
