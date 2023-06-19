@@ -1,5 +1,6 @@
 import express from 'express';
 const movieRouter = express.Router();
+import multer from 'multer';
 import { getFreeMovies, getAllMovies, postMovies, saveMovie, getAllSavedMovies, deleteSavedMovie, addComment } from '../controllers/movieController';
 import { User } from '../models/userModel';
 
@@ -26,6 +27,8 @@ const authentification = async (req, res, next) => {
     };
 }
 
+const upload = multer({ dest: 'uploads/' });
+
 //Get all public movies - Public
 movieRouter.get("/start", getFreeMovies);
 
@@ -33,7 +36,7 @@ movieRouter.get("/start", getFreeMovies);
 movieRouter.get("/", authentification, getAllMovies);
 
 //Post movies - Private
-movieRouter.post("/", authentification, postMovies);
+movieRouter.post("/", authentification, upload.single('movie_location_still'), postMovies);
 
 // Save and delete saved movies - Private
 movieRouter.route("/:id")
