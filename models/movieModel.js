@@ -37,7 +37,11 @@ const MovieLocationSchema = mongoose.Schema(
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   }],
-  Comments: [{ userName: String, message: String }]
+  Comments: [{
+    userName: String, 
+    message: String,
+    createdAt: new Date()
+  }]
   }
 );
 
