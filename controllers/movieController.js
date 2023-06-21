@@ -141,6 +141,7 @@ export const addComment = async (req, res) => {
       const newComment = {
         userName: userName || user.username,
         message: message,
+        createdAt: Date.now()
       };
       
       movieToUpdate.Comments.push(newComment);
