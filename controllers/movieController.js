@@ -96,7 +96,7 @@ export const getMovie = async (req, res) => {
     if (singleMovie) {
       res.status(200).json({
         success: true,
-        message: `Found movie ${singleMovie}`,
+        message: `Found movie ${singleMovie.title}`,
         body: {
           singleMovie: singleMovie,
         },
