@@ -35,6 +35,11 @@ movieRouter.get("/", authentification, getAllMovies);
 //Post movies - Private
 movieRouter.post("/", authentification, postMovies);
 
+// get all saved movies - Private
+movieRouter.route("/savedmovies") 
+  .all(authentification)
+  .get(getAllSavedMovies)
+
 // Save and delete saved movies - Private
 movieRouter.route("/:id")
   .all(authentification)
@@ -44,10 +49,5 @@ movieRouter.route("/:id")
 
 //Add comment - Private
 movieRouter.put("/:id/addcomment", authentification, addComment);
-
-// get all saved movies - Private
-movieRouter.route("/savedmovies") 
-  .all(authentification)
-  .get(getAllSavedMovies)
 
 export default movieRouter;
