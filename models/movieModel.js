@@ -40,7 +40,10 @@ const MovieLocationSchema = mongoose.Schema(
   Comments: [{
     userName: String, 
     message: String,
-    createdAt: Date.now()
+    createdAt: {
+      type: Date,
+      default: () => new Date()
+    }
   }]
   }
 );

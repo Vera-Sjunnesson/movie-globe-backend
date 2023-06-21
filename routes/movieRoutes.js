@@ -1,6 +1,6 @@
 import express from 'express';
 const movieRouter = express.Router();
-import { getFreeMovies, getAllMovies, postMovies, getMovie, saveMovie, getAllSavedMovies, deleteSavedMovie, addComment } from '../controllers/movieController';
+import { getFreeMovies, getAllMovies, postMovies, getComments, saveMovie, getAllSavedMovies, deleteSavedMovie, addComment } from '../controllers/movieController';
 import { User } from '../models/userModel';
 
 const authentification = async (req, res, next) => {
@@ -43,9 +43,11 @@ movieRouter.route("/savedmovies")
 // Save and delete saved movies - Private
 movieRouter.route("/:id")
   .all(authentification)
-  .get(getMovie)
   .put(saveMovie)
   .delete(deleteSavedMovie);
+
+//get comments - Private
+movieRouter.get("/:id/getcomments", authentification, getComments);
 
 //Add comment - Private
 movieRouter.put("/:id/addcomment", authentification, addComment);

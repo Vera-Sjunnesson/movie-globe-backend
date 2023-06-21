@@ -90,7 +90,7 @@ export const postMovies = async (req, res) => {
 // desc: Get a movie
 // route: GET /movies/:id
 // access: PRIVATE
-export const getMovie = async (req, res) => {
+export const getComments = async (req, res) => {
   try {
     const singleMovie = await MovieLocation.findById(req.params.id);
     if (singleMovie) {
